@@ -1,0 +1,53 @@
+
+<<< setup
+
+INFO: Pre-calculating Fitts's Law Movement Times...
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+INFO: Separated Cost Tables Generated.
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Presolve has eliminated 51243 rows and 1037344 columns...
+Tried aggregator 2 times.
+MIQCP Presolve eliminated 97167 rows and 1037495 columns.
+MIQCP Presolve modified 136619 coefficients.
+Aggregator did 1 substitutions.
+Reduced MIQCP has 13410 rows, 27196 columns, and 524108 nonzeros.
+Reduced MIQCP has 6640 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Reduced MIQCP has 104 quadratic constraints.
+Presolve time = 7.77 sec. (118116.13 ticks)
+Probing fixed 536 vars, tightened 63928 bounds.
+Probing changed sense of 1185 constraints.
+Probing time = 0.52 sec. (471.42 ticks)
+Clique table members: 11252.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.07 sec. (131.50 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0    -4157.6587     0                 -15397.3634      726         
+      0     0    -2695.0399   158                     Cone: 2     1499         
+      0     0    -2653.5723   174                     Cone: 7     1822         
+      0     0    -2629.9790   254                     Cone: 8     2020         
+      0     0    -2610.0372   205                    Cone: 11     2379         
+      0     0    -2596.6440   238                    Cone: 12     2576         
+      0     0    -2578.6434   381                    Cone: 16     3074         
+      0     0    -1213.6934   226                 Cone: 10091   171904         
+      0     0    -1213.6921  2518                 Cone: 16127   196875         
+      0     0    -1213.6914  2807                 Cone: 21755   204673         
+      0     0    -1213.6911  2844                 Cone: 26859   208580         
+      0     0    -1213.6910  2847                 Cone: 31201   211201         
+      0     0    -1213.6909  2847                 Cone: 34088   214287         
+      0     0    -1213.6908  2841                 Cone: 35502   216077         
+      0     0    -1213.6908  2840                 Cone: 36432   217225         
+      0     0    -1213.6908  2840                 Cone: 36819   217769         
+      0     0    -1213.6908  2840                 Cone: 36992   217965         
+      0     0    -1213.6908  2840                 Cone: 37064   218077         
+      0     0    -1213.6908  2840                 Cone: 37098   218420         
+      0     0    -1213.6908  2840                 Cone: 37134   218497         
+      0     0    -1213.6908  2840                 Cone: 37149   218547         
+      0     0    -1213.6908  2840                 Cone: 37156   218589         
+      0     0    -1213.6908  2840                 Cone: 37163   218677         
+      0     0    -1213.6908  2840                 Cone: 37168   218681         
+      0     0    -1213.6908  2840                  -1213.6908   218681         

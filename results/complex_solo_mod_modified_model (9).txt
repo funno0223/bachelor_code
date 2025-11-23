@@ -1,0 +1,19 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 51:1-23 models/modified_model.mod: External data element "timePerMm" was not defined.
+INFO: Calculating Fitts' Law Time Tables...
+INFO: Fitts' Tables generated.
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+INFO: Separated Cost Tables Generated.
+*** ERROR[GENERATE_202] at 357:0 models/modified_model.mod: Data element "timePerMm" not defined.
+*** ERROR[GENERATE_202] at 484:3-487:53 models/modified_model.mod: Data element "timePerMm" not defined.
+*** ERROR[GENERATE_101] at 484:3-487:53 models/modified_model.mod: Constraint could not be created.
+*** ERROR[INTERFACE_003] at 575:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

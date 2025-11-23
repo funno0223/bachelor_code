@@ -2,7 +2,7 @@
  * OPL 22.1.1.0 Model
  * Author: funno
  * Modified: Unified Logic & Slant Model (Updated v19)
- * Final Fix: Pre-calculated Flags & Static Filtering
+ * Final Fix: Angle Tolerance in Sweet Spot
  *********************************************/
 
 using CPLEX;
@@ -48,6 +48,7 @@ float scaleLength = ...;
 float fretPosition[Frets];
 float stringSpacing = ...;
 float SP_max_mm[FingersButFirst] = ...;
+float timePerMm = ...;
 float fingerLengths_mm[Fingers] = ...;
 float fingerDifficulty[Fingers] = ...;
 float timeThresholdRatio = ...;
@@ -56,16 +57,13 @@ float natural_min_spread_mm[FingersButFirst] = ...;
 
 // --- 回転モデル用パラメータ ---
 float knuckleOffsets[Fingers] = [0.0, 20.0, 40.0, 60.0];
-// maxRotationAngle は execute ブロック内で動的に計算するためここでは固定値としては使いません
 
 // 計算テーブル
 float Stretch_CostTable[p in HandPosition][h in Fingers][c in AllCombinations];
 float Physics_CostTable[p in HandPosition][h in Fingers][c in AllCombinations];
 
-// 既存のパラメータに加えて使用
 float rad_to_deg = 180.0 / 3.141592653589793;
 float deg_to_rad = 3.141592653589793 / 180.0;
-
 
 // コスト係数
 float d_PC = ...;
@@ -91,9 +89,7 @@ execute {
   }
 }
 
-// ============================================================================
 // B & C ストレッチ(Stretch) と 物理負荷(Physics) の独立計算
-// ============================================================================
 execute {
   var PI = 3.141592653589793;
   var knuckleDist = new Array();
@@ -103,62 +99,43 @@ execute {
   }
   
   var limitRatios = new Array();
-  limitRatios[1] = 1.0; limitRatios[2] = 1.05; limitRatios[3] = 1.05; limitRatios[4] = 1.2; 
+  limitRatios[1] = 1.0; limitRatios[2] = 1.05; limitRatios[3] = 1.05;
+  limitRatios[4] = 1.2; 
   
-  // 変更: 有効指長係数 (Index:0.9, Middle:0.9, Ring:0.8, Pinky:1.0)
   var baseFactors = new Array();
-  baseFactors[1] = 0.9; baseFactors[2] = 0.9; baseFactors[3] = 0.8; baseFactors[4] = 1.0;
+  baseFactors[1] = 0.9;
+  baseFactors[2] = 0.9; baseFactors[3] = 0.8; baseFactors[4] = 1.0;
 
-  // 物理モデル用定数
   var stringTension = new Array();
-  stringTension[1] = 1.0; stringTension[2] = 1.0; stringTension[3] = 1.0;
+  stringTension[1] = 1.0;
+  stringTension[2] = 1.0; stringTension[3] = 1.0;
   stringTension[4] = 1.2; stringTension[5] = 1.4; stringTension[6] = 1.6;
   
-  var breakAngleDeg = 15.0; 
+  var breakAngleDeg = 15.0;
   var tanTheta = Math.tan(breakAngleDeg * deg_to_rad);
 
   writeln("INFO: Calculating Separated Costs (Stretch vs Physics)...");
-
   for(var p in HandPosition) {
     var pivotX = fretPosition[p];
-    var pivotY = 0.0; 
-
+    var pivotY = 0.0;
     for(var h in Fingers) { 
       for(var c in AllCombinations) {
         
-        // --- 初期化 ---
         Stretch_CostTable[p][h][c] = 0.0;
         Physics_CostTable[p][h][c] = 0.0;
 
-        // 0. 論理的制約 (ハード制約用フラグ)
         if (c.fret < p) {
              Stretch_CostTable[p][h][c] = 100000.0;
-             continue; // Physics計算不要
+             continue; 
         }
 
-        // =================================================
-        // 特徴量1: 幾何学コスト (Stretch)
-        // =================================================
         var targetString = c.corda;
-        
-        // 変更: 最大回転角 45.0 -> 40.0
-        var maxRotation = 40.0; 
-        
-        // 基本回転角 (弦依存: 6弦->0度, 1弦->-40度)
-        var baseTheta = maxRotation * (targetString - 6.0) / 5.0; 
-        
-        // 変更: フレット依存の追加回転 (弦による重み付けを追加)
-        // 1. そのフレットでの最大追加回転角 (17フレットで15度)
+        var maxRotation = 40.0;
+        var baseTheta = maxRotation * (targetString - 6.0) / 5.0;
         var fretRotationMax = (c.fret / 17.0) * 15.0;
-        
-        // 2. 弦による係数 (1弦=0.0, 6弦=1.0)
         var stringFactor = (targetString - 1.0) / 5.0;
-        
-        // 3. 最終的な追加回転角
         var fretRotation = fretRotationMax * stringFactor;
-        
-        // 最終的な回転角 (基本角 - 追加角)
-        var thetaDeg = baseTheta - fretRotation; 
+        var thetaDeg = baseTheta - fretRotation;
         var thetaRad = thetaDeg * deg_to_rad;
 
         var d = knuckleDist[h];
@@ -166,16 +143,13 @@ execute {
         var kY = pivotY + (d * Math.sin(thetaRad));
 
         var tX = fretPosition[c.fret];
-        var tY = (c.corda - 1) * stringSpacing; 
-
+        var tY = (c.corda - 1) * stringSpacing;
         var vX = tX - kX;
         var vY = tY - kY;
         var dist = Math.sqrt(vX*vX + vY*vY);
-
         var nX = -Math.sin(thetaRad);
         var nY = Math.cos(thetaRad);
 
-        // 有効長と限界判定
         var neckFactor = 1.0;
         if (c.fret >= 15) {
             var ratioHigh = (c.fret - 15.0) / (f_max - 15.0);
@@ -183,25 +157,24 @@ execute {
             neckFactor = 1.0 - (0.15 * ratioHigh);
         }
         var effLen = fingerLengths_mm[h] * baseFactors[h] * neckFactor;
-
         if (effLen > 0 && dist > effLen * limitRatios[h]) {
-             Stretch_CostTable[p][h][c] = 100000.0; // Impossible
+             Stretch_CostTable[p][h][c] = 100000.0;
              continue;
         }
 
-        // 距離コスト
         var distCost = 0.0;
+        var ratio = 0.0; // 距離比率を保持
+
         if (effLen > 0) {
-            var ratio = dist / effLen;
+            ratio = dist / effLen;
+            
             if (ratio < 0.3) {
                 distCost = (0.3 - ratio) * 5.0;
             } 
-            // 変更: 閾値を 0.7 -> 0.6 に変更
             else if (ratio <= 0.6) {
                 distCost = 0.0;
             } 
             else {
-                // 変更: 閾値を 0.7 -> 0.6 に変更
                 distCost = (ratio - 0.6) * 10.0;
                 if (ratio > 1.0) {
                     distCost += (ratio - 1.0) * 20.0;
@@ -209,7 +182,6 @@ execute {
             }
         }
 
-        // 角度コスト
         var angleCost = 0.0;
         var dotProd = vX * nX + vY * nY;
         var cosDelta = (dist > 0.001) ? (dotProd / dist) : 1.0;
@@ -217,42 +189,36 @@ execute {
         if (cosDelta < -1.0) cosDelta = -1.0;
         var deltaDeg = Math.acos(cosDelta) * rad_to_deg;
 
-        // 変更: 許容角度を10度狭める (Other: 25->15, Pinky: 30->20)
         var baseMaxAngle = 15.0;
         if (h == 4) baseMaxAngle = 20.0;
         
         var maxAngle = baseMaxAngle;
         if (c.fret >= 12) maxAngle = Math.max(10.0, baseMaxAngle - (c.fret - 12) * 0.5);
-
+        
+        // --- 修正: スイートスポット(ratio 0.3-0.6)では角度ペナルティを軽減 ---
+        var angleMultiplier = 0.5; // デフォルト倍率
+        if (effLen > 0 && ratio >= 0.3 && ratio <= 0.6) {
+             angleMultiplier = 0.2; // 寛容モード (0.5 -> 0.2)
+        }
+        
         if (deltaDeg > maxAngle) {
-            angleCost = (deltaDeg - maxAngle) * 0.5;
+            angleCost = (deltaDeg - maxAngle) * angleMultiplier;
         }
 
-        // Stretchテーブル格納
-        // 変更: 難易度(diff)の乗算を除外 (単純和)
-        // var diff = fingerDifficulty[h]; は Physics でのみ使用
         Stretch_CostTable[p][h][c] = distCost + angleCost;
 
-        // =================================================
-        // 特徴量2: 物理アクションコスト (Physics)
-        // =================================================
-        // Grimes Model: F ~ tau * a / l
-        
-        var a_mm = 0.5 + (2.0 * c.fret / 12.0); // Action
-        var l_mm = scaleLength - fretPosition[c.fret]; // Vibrating Length
-        var tau = stringTension[targetString]; // Tension
+        var a_mm = 0.5 + (2.0 * c.fret / 12.0);
+        var l_mm = scaleLength - fretPosition[c.fret];
+        var tau = stringTension[targetString];
 
-        // l_mm が 0 になるケースのガード（理論上はないはずだが念のため）
         var forceIndex = 0.0;
         if (l_mm > 0.001) {
              forceIndex = (2.0 * tau * a_mm) / (l_mm * tanTheta);
         }
 
-        // 指難易度は物理コストにも影響する (小指は力が弱いのでコスト増)
         var diff = fingerDifficulty[h];
-        // Scaling: 係数 200.0
         Physics_CostTable[p][h][c] = (forceIndex * 100.0) * diff;
-      }
+    }
     }
   }
   writeln("INFO: Separated Cost Tables Generated.");
@@ -264,11 +230,14 @@ execute {
 int prevNoteIndex[Notes];
 float accumulatedTime[Notes];
 
-// 判定フラグ配列 (0=False, 1=True)
+// 事前計算された時間係数配列 (線形化用)
+float timePenaltyFactor[NotesButFirst];
+
 int isFast[Notes];   
 int isLegato[Notes]; 
 
 execute {
+  // 1. 累積時間の計算
   for (var i = 2; i <= m; i++) {
     if (note[i] != RestNote) {
        var p = i - 1;
@@ -299,6 +268,12 @@ execute {
   writeln("INFO: Time Logic Initialized.");
   writeln("  - Relax Threshold: ", relaxThreshold, " ms");
   
+  // 2. フラグ設定と時間係数の事前計算 (Pre-calculation)
+  
+  var tp_base = 0.15;   
+  var tp_ref = 80.0;    
+  var tp_exp = 1.5;     
+  
   for (var j = 1; j <= m; j++) {
      if (accumulatedTime[j] < relaxThreshold) {
         isFast[j] = 1;
@@ -306,7 +281,16 @@ execute {
      if (accumulatedTime[j] <= legatoThreshold) {
         isLegato[j] = 1;
      }
+     
+     if (j >= 2) {
+         if (note[j] == RestNote) {
+             timePenaltyFactor[j] = 0.0;
+         } else {
+             timePenaltyFactor[j] = tp_base + Math.pow(tp_ref / (accumulatedTime[j] + 0.01), tp_exp);
+         }
+     }
   }
+  writeln("INFO: Time Penalty Factors Pre-calculated.");
 }
 
 // ============================================================================
@@ -317,16 +301,16 @@ dvar boolean o[Notes][Strings];
 dvar boolean y[Notes][HandPosition][Fingers][AllCombinations];
 dvar boolean x[Notes][HandPosition];
 
-// PC
 dexpr float PC[i in NotesButFirst] = 
-  (note[i] == RestNote) ? 0.0 : 
+  (note[i] == RestNote) ?
+  0.0 : 
   (prevNoteIndex[i] == i) ? 0.0 : 
   abs(sum(p in HandPosition) fretPosition[p] * x[prevNoteIndex[i]][p] - 
       sum(p in HandPosition) fretPosition[p] * x[i][p]);
 
-// SC
 dexpr float SC[i in NotesButFirst] = 
-  (note[i] == RestNote) ? 0.0 : 
+  (note[i] == RestNote) ?
+  0.0 : 
   (prevNoteIndex[i] == i) ? 0.0 :
   stringSpacing * abs(
     ( sum(p in HandPosition) sum(h in Fingers) sum(c in AllCombinations) c.corda * y[prevNoteIndex[i]][p][h][c] +
@@ -336,36 +320,23 @@ dexpr float SC[i in NotesButFirst] =
       sum(s in Strings : s in OpenStrings[note[i]]) s * o[i][s])
   );
 
-float jointDiscountRate = 0.9; 
 dexpr float JointSavings[i in NotesButFirst] = 0.0;
- /* (note[i] == RestNote || prevNoteIndex[i] == i) ? 0.0 :
-  sum(p in HandPosition)
-  sum(h in Fingers : h == 1) // 人差し指のみ
-  sum(c in Combinations[note[i]])
-  sum(c_prev in Combinations[note[prevNoteIndex[i]]] : 
-      c.fret == c_prev.fret && abs(c.corda - c_prev.corda) >= 1)
-    (stringSpacing * jointDiscountRate) * y[i][p][h][c] * y[prevNoteIndex[i]][p][h][c_prev];
-*/
-// ST (Stretch Cost)
+
 dexpr float ST[i in Notes] = 
-  (note[i] == RestNote) ? 0.0 : 
+  (note[i] == RestNote) ?
+  0.0 : 
   sum(p in HandPosition) 
   sum(h in Fingers) 
   sum(c in Combinations[note[i]])
     Stretch_CostTable[p][h][c] * y[i][p][h][c];
 
-// DH (Physics/Action Cost)
 dexpr float DH[i in Notes] = 
-  (note[i] == RestNote) ? 0.0 : 
+  (note[i] == RestNote) ?
+  0.0 : 
   sum(p in HandPosition) 
   sum(h in Fingers) 
   sum(c in Combinations[note[i]])
     Physics_CostTable[p][h][c] * y[i][p][h][c];
-
-// 時間係数
-dexpr float timePenaltyFactor[i in NotesButFirst] = 
-  (note[i] == RestNote) ? 0.0 : 
-  minl(1.0, 50.0 / (accumulatedTime[i] + 0.01)); 
 
 dexpr float tot_PC = sum(i in NotesButFirst) PC[i] * timePenaltyFactor[i];
 dexpr float tot_SC = sum(i in NotesButFirst) SC[i] * timePenaltyFactor[i];
@@ -376,7 +347,7 @@ dexpr float tot_NO = sum(i in Notes) sum(s in Strings : s in OpenStrings[note[i]
 
 minimize
   alpha_PC * d_PC * tot_PC +
-  alpha_SC * d_SC * (tot_SC - tot_JointSavings) + 
+  alpha_SC * d_SC * tot_SC +
   alpha_ST * d_ST * tot_ST + 
   alpha_DH * d_DH * tot_DH +
   alpha_NO * d_NO * tot_NO;
@@ -386,20 +357,16 @@ minimize
 // ============================================================================
 
 subject to {
-  // --- 基本整合性 ---
   forall(i in Notes) {
     vinc2:
       sum(s in Strings : s in OpenStrings[note[i]]) o[i][s] +
       sum(p in HandPosition) sum(h in Fingers) sum(c in Combinations[note[i]]) y[i][p][h][c] 
       == (note[i] != RestNote);
-
     vinc2neg:
       sum(p in HandPosition) sum(h in Fingers) 
       sum(c in AllCombinations : c not in Combinations[note[i]]) y[i][p][h][c] == 0;
-
     vinc3:
       sum(p in HandPosition) x[i][p] == 1;
-
     forall(p in HandPosition)
       vinc4:
         sum(h in Fingers) sum(c in AllCombinations) y[i][p][h][c] <= x[i][p];
@@ -410,7 +377,6 @@ subject to {
       vinc5:
         x[i][p] - x[i-1][p] <= 1 - sum(s in OpenStrings[note[i]]) o[i][s];
 
-  // 物理移動制約
   forall(i in NotesButFirst) 
     vinc6_mod:
        if (note[i] != RestNote && prevNoteIndex[i] != i) 
@@ -420,13 +386,9 @@ subject to {
     forall(p in HandPosition) {
       forall(h in Fingers) {
         forall(c in Combinations[note[i]]) {
-           
-           // [制約 1] ポジション整合性 (論理制約)
            if (c.fret < p) {
                y[i][p][h][c] == 0;
            }
-
-           // [制約 2] 幾何学的制約 (コストテーブル参照)
            if (Stretch_CostTable[p][h][c] >= 50000.0) {
                y[i][p][h][c] == 0;
            }
@@ -435,20 +397,14 @@ subject to {
     }
   }
 
-  // =========================================================================
   // 遷移制約
-  // =========================================================================
-  
-  // --- A. ハード制約: 物理的に不可能な動き (常に適用) ---
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i) {
       forall(p in HandPosition) {
         forall(h in Fingers) {
           forall(c in Combinations[note[i]]) {
-           
              y[i][p][h][c] + 
                sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
                    (
-                     // [1] 同一指: スライド/ジョイント以外の移動禁止
                      (h == h_prev && 
                         !(
                            (c.corda == c_prev.corda) || 
@@ -456,22 +412,20 @@ subject to {
                         )
                      )
                      ||
-                     // [2] クロス指: 同フレット異弦での指順序逆転禁止
                      (c.fret == c_prev.fret && c.corda != c_prev.corda && 
-                        ((c.corda < c_prev.corda && h < h_prev) || (c.corda > c_prev.corda && h > h_prev)))
+                        ((c.corda < c_prev.corda && h < h_prev) ||
+                         (c.corda > c_prev.corda && h > h_prev)))
                      ||
-                     // [3] 同弦上: フレット移動と指番号の逆転禁止
                      (c.corda == c_prev.corda && 
                         ((c.fret > c_prev.fret && h < h_prev) || (c.fret < c_prev.fret && h > h_prev)))
                    )
                ) y[prevNoteIndex[i]][p_prev][h_prev][c_prev] 
                <= 1;
-          }
+        }
         }
       }
   }
 
-  // --- B. ソフト制約: 速いフレーズでの制限 (isFast[i]==1 のみ適用) ---
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFast[i] == 1) {
       forall(p in HandPosition) {
         forall(h in Fingers) {
@@ -479,29 +433,25 @@ subject to {
                y[i][p][h][c] + 
                sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
                    (
-                     // 一般的な指順序の推奨
                      (c.fret > c_prev.fret && h < h_prev && c.corda != c_prev.corda) ||
                      (c.fret < c_prev.fret && h > h_prev && c.corda != c_prev.corda)
                      ||
-                     // レガート制約 (isLegato[i]==1 の場合のみ追加でチェック)
                      (isLegato[i] == 1 && 
                         !(c.corda == c_prev.corda || p == p_prev) 
                      )
                    )
                ) y[prevNoteIndex[i]][p_prev][h_prev][c_prev]
                <= 1;
-          }
+        }
         }
       }
   }
-
-} // End of subject to
+}
 
 // ============================================================================
 // 5. 出力設定
 // ============================================================================
 main {
-  // cplex.epgap = 0.01;
   thisOplModel.generate();
   if (cplex.solve()) {
     var obj = cplex.getObjValue();
@@ -540,16 +490,14 @@ execute {
   writeln();
   writeln("\n--- Cost Breakdown ---");
   
-  // 各コスト項の計算
   var costPC = alpha_PC * d_PC * tot_PC;
   var costSC = alpha_SC * d_SC * (tot_SC - tot_JointSavings);
   var costST = alpha_ST * d_ST * tot_ST;
   var costDH = alpha_DH * d_DH * tot_DH;
   var costNO = alpha_NO * d_NO * tot_NO;
-
   writeln("  Position Change (PC): ", costPC);
   writeln("  String Change   (SC): ", costSC);
-  writeln("  Geo Stretch     (ST): ", costST); 
+  writeln("  Geo Stretch     (ST): ", costST);
   writeln("  Phys Action     (DH): ", costDH);
   writeln("  Open String     (NO): ", costNO);
   writeln("-----------------------------------------");

@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 407:3-411:27 models/modified_model.mod: Name "tot_SC" does not exist.
+### OPL exception: Impossible to load model.

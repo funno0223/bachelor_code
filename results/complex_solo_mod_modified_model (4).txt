@@ -1,0 +1,36 @@
+
+<<< setup
+
+INFO: Pre-calculating Fitts's Law Movement Times...
+Check PC Table [1][5]: 71.111572612
+Check SC Table [1][6]: 80.342157153
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+INFO: Separated Cost Tables Generated.
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+MIQCP Presolve eliminated 97167 rows and 1038045 columns.
+MIQCP Presolve modified 22792 coefficients.
+Reduced MIQCP has 8507 rows, 16218 columns, and 163172 nonzeros.
+Reduced MIQCP has 5470 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Reduced MIQCP has 104 quadratic constraints.
+Presolve time = 1.56 sec. (5343.30 ticks)
+Probing fixed 535 vars, tightened 49424 bounds.
+Probing changed sense of 1188 constraints.
+Probing time = 0.20 sec. (128.64 ticks)
+Cover probing fixed 0 vars, tightened 5 bounds.
+Clique table members: 65534.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.02 sec. (41.30 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0     -265.9514     0                  -5172.3710      540         
+      0     0     -263.7486   143                     Cone: 5      667         
+      0     0     -261.9264   142                    Cone: 11      792         
+      0     0     -260.9467   216                    Cone: 16      909         
+      0     0     -259.7336   282                    Cone: 18     1076         
+      0     0     -258.8649   192                    Cone: 20     1225         
+      0     0     -258.0529   300                    Cone: 21     1305         

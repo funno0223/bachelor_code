@@ -1,0 +1,200 @@
+
+<<< setup
+
+INFO: Generating Fitts' Law Time Tables...
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+INFO: Separated Cost Tables Generated.
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 96318 rows and 1040340 columns.
+MIP Presolve modified 2022 coefficients.
+Aggregator did 325 substitutions.
+Reduced MIP has 8000 rows, 39928 columns, and 127594 nonzeros.
+Reduced MIP has 39928 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 1.02 sec. (1517.76 ticks)
+Found incumbent of value 578.227942 after 1.46 sec. (2141.85 ticks)
+Probing fixed 17024 vars, tightened 0 bounds.
+Probing changed sense of 1188 constraints.
+Probing time = 0.31 sec. (137.03 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 1397 rows and 17284 columns.
+MIP Presolve modified 38 coefficients.
+Aggregator did 31 substitutions.
+Reduced MIP has 6572 rows, 22613 columns, and 88748 nonzeros.
+Reduced MIP has 22613 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.12 sec. (198.99 ticks)
+Probing fixed 114 vars, tightened 0 bounds.
+Probing time = 0.14 sec. (121.91 ticks)
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 19 rows and 134 columns.
+MIP Presolve modified 10 coefficients.
+Aggregator did 1 substitutions.
+Reduced MIP has 6552 rows, 22478 columns, and 87971 nonzeros.
+Reduced MIP has 22478 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.10 sec. (166.85 ticks)
+Probing fixed 3 vars, tightened 0 bounds.
+Probing time = 0.05 sec. (31.66 ticks)
+Clique table members: 42081.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.06 sec. (68.32 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                          578.2279        0.0000           100.00%
+*     0+    0                          451.4441        0.0000           100.00%
+      0     0      155.4846   435      451.4441      155.4846     1235   65.56%
+*     0+    0                          176.2679      155.4846            11.79%
+*     0+    0                          155.9069      155.4846             0.27%
+      0     0        cutoff            155.9069      155.9069     1278    0.00%
+Elapsed time = 2.74 sec. (3296.31 ticks, tree = 0.01 MB, solutions = 4)
+
+Clique cuts applied:  6
+Zero-half cuts applied:  32
+Lift and project cuts applied:  2
+Gomory fractional cuts applied:  5
+
+Root node processing (before b&c):
+  Real time             =    2.78 sec. (3346.85 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    2.78 sec. (3346.85 ticks)
+>>> 解が見つかりました。Objective: 155.906934957
+Note	String	Fret	Handposition	Finger
+A4	2	0	3	0	4	0	4	0
+A4	2	0	3	0	4	0	4	0
+A4	2	0	3	0	4	0	4	0
+G4	2	0	3	0	4	0	2	0
+F4	2	0	3	0	4	0	1	0
+E4	1	0	2	0	3	0	4	0	1	0
+F4	2	0	3	0	4	0	1	0
+E4	1	0	2	0	3	0	4	0	1	0
+D4	1	0	3	0	4	0	1	0
+Cs4	1	0	3	0	4	0	1	0
+As4	2	0	3	0	4	0	4	0
+Cs4	1	0	2	0	4	0	5	0
+Gs4	2	0	3	0	4	0	4	0
+A4	2	0	3	0	4	0	4	0
+D5	2	0	3	0	4	0	9	0
+E5	2	0	3	0	4	0	9	0
+F5	2	0	3	0	4	0	10	0
+E5	2	0	3	0	4	0	12	0
+F5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+F5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	15	0
+A5	2	0	3	0	4	0	15	0
+R	0	0	0	x
+C6	2	0	3	0	4	0	16	0
+C6	2	0	3	0	4	0	16	0
+R	0	0	0	x
+As5	2	0	3	0	4	0	16	0
+A5	2	0	3	0	4	0	15	0
+G5	2	0	3	0	4	0	13	0
+F5	2	0	3	0	4	0	13	0
+R	0	0	0	x
+E5	2	0	3	0	4	0	12	0
+F5	2	0	3	0	4	0	10	0
+E5	2	0	3	0	4	0	9	0
+D5	2	0	3	0	4	0	9	0
+Cs5	2	0	3	0	4	0	9	0
+C5	2	0	3	0	4	0	8	0
+A5	2	0	3	0	4	0	14	0
+C5	2	0	3	0	4	0	6	0
+As4	2	0	3	0	4	0	6	0
+G5	2	0	3	0	4	0	13	0
+As4	2	0	3	0	4	0	5	0
+A4	2	0	3	0	4	0	5	0
+F5	2	0	3	0	4	0	10	0
+E5	2	0	3	0	4	0	9	0
+D5	2	0	3	0	4	0	8	0
+C5	2	0	3	0	4	0	8	0
+R	0	0	0	x
+A4	1	0	3	0	4	0	8	0
+As4	1	0	3	0	4	0	8	0
+C5	2	0	3	0	4	0	8	0
+F5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+A5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+F5	2	0	3	0	4	0	13	0
+A4	2	0	3	0	4	0	5	0
+As4	2	0	3	0	4	0	5	0
+A4	2	0	3	0	4	0	4	0
+G4	2	0	3	0	4	0	2	0
+F4	2	0	3	0	4	0	1	0
+E4	1	0	2	0	3	0	4	0	1	0
+D4	1	0	3	0	4	0	1	0
+Cs4	1	0	3	0	4	0	1	0
+R	0	0	0	x
+A3	1	0	2	0	4	0	1	0
+D4	1	0	2	0	4	0	6	0
+C4	1	0	2	0	4	0	4	0
+D4	1	0	2	0	4	0	6	0
+F4	2	0	3	0	4	0	1	0
+F4	2	0	3	0	4	0	1	0
+F4	2	0	3	0	4	0	1	0
+F4	2	0	3	0	4	0	1	0
+G4	2	0	3	0	4	0	2	0
+G4	2	0	3	0	4	0	2	0
+G4	2	0	3	0	4	0	2	0
+G4	2	0	3	0	4	0	2	0
+A4	2	0	3	0	4	0	4	0
+A4	2	0	3	0	4	0	4	0
+C5	2	0	3	0	4	0	7	0
+C5	2	0	3	0	4	0	7	0
+D5	2	0	3	0	4	0	9	0
+D5	2	0	3	0	4	0	9	0
+E5	2	0	3	0	4	0	9	0
+E5	2	0	3	0	4	0	12	0
+F5	2	0	3	0	4	0	13	0
+F5	2	0	3	0	4	0	13	0
+F5	2	0	3	0	4	0	13	0
+F5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+G5	2	0	3	0	4	0	13	0
+A5	2	0	3	0	4	0	15	0
+C6	2	0	3	0	4	0	16	0
+Cs5	2	0	3	0	4	0	9	0
+F5	2	0	3	0	4	0	13	0
+C6	2	0	3	0	4	0	16	0
+As5	2	0	3	0	4	0	16	0
+F5	1	0	3	0	4	0	16	0
+Cs5	2	0	3	0	4	0	7	0
+C5	2	0	3	0	4	0	7	0
+Cs5	2	0	3	0	4	0	7	0
+C5	2	0	3	0	4	0	6	0
+As4	2	0	3	0	4	0	6	0
+Cs5	2	0	3	0	4	0	7	0
+R	0	0	0	x
+As4	2	0	3	0	4	0	5	0
+R	0	0	0	x
+A4	2	0	3	0	4	0	4	0
+
+
+--- Cost Breakdown ---
+  Position Change (PC): 31.333295622
+  String Change   (SC): 0
+  Geo Stretch     (ST): 20.971045275
+  Phys Action     (DH): 97.602594061
+  Open String     (NO): 6
+-----------------------------------------
+  Total Cost (Sum)    : 155.906934957
+-----------------------------------------
+main returns 0
+
+<<< main
+
+
+<<< done
+
