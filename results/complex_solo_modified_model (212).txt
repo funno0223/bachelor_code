@@ -1,0 +1,204 @@
+
+<<< setup
+
+INFO: Hard Constraints (MaxReach) Initialized.
+INFO: Unified Physical Strain Table generated.
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1565107 rows and 1038668 columns.
+MIP Presolve added 72 rows and 36 columns.
+MIP Presolve modified 10911 coefficients.
+Aggregator did 6 substitutions.
+Reduced MIP has 5418 rows, 6421 columns, and 84297 nonzeros.
+Reduced MIP has 5308 binaries, 0 generals, 0 SOSs, and 612 indicators.
+Presolve time = 1.40 sec. (2507.20 ticks)
+Probing fixed 560 vars, tightened 1608 bounds.
+Probing changed sense of 1257 constraints.
+Probing time = 0.04 sec. (25.29 ticks)
+Cover probing fixed 9 vars, tightened 34 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 522 rows and 1024 columns.
+MIP Presolve modified 1042 coefficients.
+Aggregator did 153 substitutions.
+Reduced MIP has 4743 rows, 5244 columns, and 71377 nonzeros.
+Reduced MIP has 4305 binaries, 98 generals, 0 SOSs, and 606 indicators.
+Presolve time = 0.10 sec. (152.10 ticks)
+Probing fixed 4 vars, tightened 556 bounds.
+Probing changed sense of 1 constraints.
+Probing time = 0.02 sec. (14.51 ticks)
+Cover probing fixed 0 vars, tightened 153 bounds.
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 129 rows and 104 columns.
+MIP Presolve modified 657 coefficients.
+Aggregator did 4 substitutions.
+Reduced MIP has 4610 rows, 5136 columns, and 69041 nonzeros.
+Reduced MIP has 4213 binaries, 98 generals, 0 SOSs, and 594 indicators.
+Presolve time = 0.09 sec. (122.57 ticks)
+Classifier predicts products in MIQP should be linearized.
+Probing time = 0.02 sec. (9.28 ticks)
+Cover probing fixed 0 vars, tightened 5 bounds.
+Clique table members: 14084.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.08 sec. (71.37 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      929.9623   183                    929.9623     1900         
+*     0+    0                          945.2078      929.9623             1.61%
+      0     0      933.5227    85      945.2078      Cuts: 83     2027    1.24%
+      0     0      933.8228    64      945.2078      Cuts: 30     2060    1.20%
+*     0+    0                          944.2991      933.8228             1.11%
+*     0+    0                          934.3714      933.8228             0.06%
+      0     0        cutoff            934.3714      934.3714     2060    0.00%
+Elapsed time = 3.65 sec. (4335.03 ticks, tree = 0.01 MB, solutions = 3)
+
+Clique cuts applied:  1
+Implied bound cuts applied:  7
+Flow cuts applied:  11
+Mixed integer rounding cuts applied:  24
+Zero-half cuts applied:  4
+Lift and project cuts applied:  8
+Gomory fractional cuts applied:  26
+
+Root node processing (before b&c):
+  Real time             =    3.68 sec. (4377.11 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    3.68 sec. (4377.11 ticks)
+>>> 解が見つかりました。Objective: 934.371375591
+Note	String	Fret	Handposition	Finger
+A4	3	14	11	2
+A4	3	14	11	2
+A4	3	14	11	2
+G4	3	12	11	1
+F4	4	15	11	3
+E4	4	14	11	3
+F4	4	15	11	3
+E4	4	14	11	3
+D4	4	12	11	2
+Cs4	4	11	11	1
+As4	3	15	11	3
+Cs4	4	11	11	1
+Gs4	3	13	11	2
+A4	3	14	12	2
+D5	2	15	12	3
+E5	1	12	12	1
+F5	1	13	12	1
+E5	1	12	12	1
+F5	1	13	12	1
+G5	1	15	12	2
+F5	1	13	12	1
+G5	1	15	12	2
+A5	1	17	13	2
+R	0	0	0	x
+C6	1	20	14	3
+C6	1	20	14	3
+R	0	0	0	x
+As5	1	18	14	2
+A5	1	17	13	2
+G5	1	15	12	2
+F5	1	13	12	1
+R	0	0	0	x
+E5	1	12	12	1
+F5	1	13	12	1
+E5	1	12	12	1
+D5	2	15	12	2
+Cs5	2	14	12	1
+C5	2	13	12	1
+A5	1	17	12	2
+C5	2	13	12	1
+As4	3	15	12	2
+G5	1	15	12	3
+As4	3	15	12	2
+A4	3	14	12	2
+F5	1	13	12	1
+E5	1	12	12	1
+D5	2	15	12	2
+C5	2	13	12	1
+R	0	0	0	x
+A4	3	14	12	2
+As4	3	15	12	2
+C5	2	13	12	1
+F5	1	13	12	1
+G5	1	15	12	2
+A5	1	17	13	2
+G5	1	15	12	2
+F5	1	13	12	1
+A4	3	14	12	2
+As4	3	15	12	2
+A4	3	14	12	2
+G4	3	12	12	1
+F4	4	15	12	3
+E4	4	14	12	2
+D4	4	12	12	1
+Cs4	4	11	11	1
+R	0	0	0	x
+A3	5	12	11	2
+D4	4	12	10	2
+C4	4	10	10	1
+D4	4	12	10	2
+F4	3	10	10	1
+F4	3	10	10	1
+F4	3	10	10	1
+F4	3	10	10	1
+G4	3	12	12	1
+G4	3	12	12	1
+G4	3	12	12	1
+G4	3	12	12	1
+A4	3	14	12	2
+A4	3	14	12	2
+C5	2	13	12	1
+C5	2	13	12	1
+D5	2	15	12	2
+D5	2	15	12	2
+E5	1	12	12	1
+E5	1	12	12	1
+F5	1	13	12	1
+F5	1	13	12	1
+F5	1	13	12	1
+F5	1	13	12	1
+G5	1	15	12	2
+G5	1	15	12	2
+G5	1	15	12	2
+G5	1	15	12	2
+A5	1	17	14	2
+C6	1	20	14	3
+Cs5	1	9	9	1
+F5	1	13	11	1
+C6	1	20	14	3
+As5	1	18	14	2
+F5	1	13	12	1
+Cs5	2	14	12	2
+C5	2	13	12	1
+Cs5	2	14	12	1
+C5	2	13	12	1
+As4	3	15	12	2
+Cs5	2	14	12	1
+R	0	0	0	x
+As4	3	15	12	2
+R	0	0	0	x
+A4	3	14	12	2
+
+
+--- Cost Breakdown ---
+  Position Change (PC) : 129.039154416
+  String Change   (SC) : 64.388862597
+  Physical Strain (New): 740.943358578
+  Open String     (NO) : 0
+-----------------------------------------
+  Total Cost (Sum)     : 934.371375591
+-----------------------------------------
+main returns 0
+
+<<< main
+
+
+<<< done
+

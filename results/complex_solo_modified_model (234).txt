@@ -1,0 +1,16 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 74:1-18 models/modified_model.mod: External data element "d_HS" was not defined.
+INFO: Calculating Stretch Costs (Additive Hybrid Model v18)...
+INFO: Stretch Cost Table Generated (Additive Hybrid Model v18).
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+*** ERROR[INTERFACE_003] at 483:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 221:12-22 models/modified_model.mod: Name "UsedFinger" does not exist.
+### OPL exception: Impossible to load model.

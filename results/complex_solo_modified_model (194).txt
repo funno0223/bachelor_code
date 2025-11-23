@@ -1,0 +1,62 @@
+
+<<< setup
+
+INFO: Accumulated Time Logic Initialized.
+  - Strict Legato (< 50 ms)
+  - Relaxed/Free  (> 171.303431187 ms)
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#0": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#0": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#1": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#1": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#2": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#2": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#3": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#3": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#4": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#4": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#5": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#5": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#6": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#6": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#7": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#7": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#2#8": -9007199254740991.
+*** ERROR[GENERATE_103] at 270:108-122 models/modified_model.mod: OPL cannot extract expression: y[i][p][h][c1].
+*** FATAL[GENERAL_005] at 270:108-122 models/modified_model.mod: Too many errors, giving up at 50.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(p in 1..22) (sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1]).
+*** ERROR[GENERATE_103] at 265:5-271:74 models/modified_model.mod: OPL cannot extract expression: if ( note[i] != 0 && prevNoteIndex[i] != i ) if ( accumulatedTime[i] < 171.303431186583 ) forall(h in 1..4) (forall(c in AllCombinations) vinc10c: sum(p in 1..22) (sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1]) <= (sum(p in 1..22) y[prevNoteIndex[i]][p][h][c])*(-1)+1); else true; else true.
+*** ERROR[GENERATE_103] at 264:3-271:74 models/modified_model.mod: OPL cannot extract expression: forall(i in 2..111) if ( note[i] != 0 && prevNoteIndex[i] != i ) if ( accumulatedTime[i] < 171.303431186583 ) (forall(h in 1..4) (forall(c in AllCombinations) vinc10c: sum(p in 1..22) (sum(c1 in AllCombinations: c1.fret != c.fret && c1.corda != c.corda) y[i][p][h][c1]) <= (sum(p in 1..22) y[prevNoteIndex[i]][p][h][c])*(-1)+1)); else true; else true.
+### OPL exception: Processing failed.

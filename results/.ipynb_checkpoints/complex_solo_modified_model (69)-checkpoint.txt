@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[DATA_012] at 14:19-21 datas/complex_solo.dat: Data item "E2" unexpected for "{int}".
+### OPL exception: Processing failed.

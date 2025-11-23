@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[PARSE_001] at 233:1-7 models/modified_model.mod: syntax error, unexpected forall
+### OPL exception: Impossible to load model.

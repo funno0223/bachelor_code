@@ -1,0 +1,6 @@
+
+<<< setup
+
+*** ERROR[PARSE_001] at 125:1-9 models/model.mod: syntax error, unexpected (identifier), expecting ';'
+*** FATAL[PARSE_107] at 308:1-13 models/model.mod: Unexpected end of file found in scripting.
+### OPL exception: Processing failed.

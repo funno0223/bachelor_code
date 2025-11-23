@@ -1,0 +1,14 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 49:1-32 models/modified_model.mod: External data element "timeThresholdRatio" was not defined.
+*** ERROR[GENERATE_202] at 259:3-262:43 models/modified_model.mod: Data element "timeThresholdRatio" not defined.
+*** ERROR[GENERATE_101] at 259:3-262:43 models/modified_model.mod: Constraint could not be created.
+*** ERROR[INTERFACE_003] at 321:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

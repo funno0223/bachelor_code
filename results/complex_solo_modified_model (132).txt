@@ -1,0 +1,36 @@
+
+<<< setup
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_MIP_Tolerances_MIPGap                   0.001
+Presolve has eliminated 1858727 rows and 1345382 columns...
+Tried aggregator 2 times.
+MIP Presolve eliminated 1947365 rows and 1345534 columns.
+MIP Presolve added 4412 rows and 2206 columns.
+MIP Presolve modified 7705 coefficients.
+Aggregator did 15 substitutions.
+Reduced MIP has 9805 rows, 8694 columns, and 69335 nonzeros.
+Reduced MIP has 5329 binaries, 0 generals, 0 SOSs, and 623 indicators.
+Presolve time = 6.62 sec. (30964.14 ticks)
+Probing fixed 955 vars, tightened 1813 bounds.
+Probing changed sense of 1485 constraints.
+Probing time = 0.05 sec. (29.90 ticks)
+Cover probing fixed 8 vars, tightened 114 bounds.
+Tried aggregator 3 times.
+MIP Presolve eliminated 2951 rows and 1670 columns.
+MIP Presolve modified 5291 coefficients.
+Aggregator did 196 substitutions.
+Reduced MIP has 6661 rows, 6828 columns, and 56809 nonzeros.
+Reduced MIP has 3750 binaries, 103 generals, 0 SOSs, and 618 indicators.
+Presolve time = 0.09 sec. (121.53 ticks)
+Probing fixed 11 vars, tightened 552 bounds.
+Probing time = 0.02 sec. (12.34 ticks)
+Cover probing fixed 0 vars, tightened 47 bounds.
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 60 rows and 51 columns.
+MIP Presolve modified 3864 coefficients.
+Aggregator did 30 substitutions.
+Reduced MIP has 6584 rows, 6747 columns, and 56178 nonzeros.
+Reduced MIP has 3724 binaries, 103 generals, 0 SOSs, and 595 indicators.
+Presolve time = 0.08 sec. (104.57 ticks)

@@ -1,0 +1,14 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 122:1-31 models/modified_model.mod: External data element "same_cut_large_mm" was not defined.
+*** ERROR[GENERATE_217] at 121:1-31 models/modified_model.mod: External data element "same_cut_small_mm" was not defined.
+*** ERROR[GENERATE_217] at 120:1-31 models/modified_model.mod: External data element "same_med_discount" was not defined.
+*** ERROR[GENERATE_217] at 119:1-33 models/modified_model.mod: External data element "same_small_discount" was not defined.
+*** ERROR[GENERATE_202] at 275:1-288:2 models/modified_model.mod: Data element "same_cut_small_mm" not defined.
+*** ERROR[GENERATE_101] at 275:1-288:2 models/modified_model.mod: Constraint could not be created.
+*** ERROR[GENERATE_202] at 313:1-392:2 models/modified_model.mod: Data element "same_small_discount" not defined.
+*** ERROR[GENERATE_101] at 313:1-392:2 models/modified_model.mod: Constraint could not be created.
+
+<<< generate
+

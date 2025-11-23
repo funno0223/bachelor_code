@@ -1,0 +1,61 @@
+
+<<< setup
+
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#0": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#0": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#1": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#1": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#2": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#2": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#3": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#0#3": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#0": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#0": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#1": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#1": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#2": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#2": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#3": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#1#3": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_102]: Index out of bound for array "y#5#2#0": <1,0>.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** FATAL[GENERAL_005]: Too many errors, giving up at 50.
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(h in 1..4) (sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c]).
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(h in 1..4) (sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c]).
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(p in 1..22) (sum(h in 1..4) (sum(c in Combinations[note[i]]) (maxl(0,(c.corda*10.8+fingerLengths_mm[h]*(-0.8)+(-10.8)))*fingerDifficulty[h]+maxl(0,(c.fret+(-12)))*1)*y[i][p][h][c])).
+*** ERROR[GENERATE_103] at 132:38-43 models/modified_model.mod: OPL cannot extract expression: DH[i].
+*** ERROR[GENERATE_103]: OPL cannot extract expression: sum(i in 1..111) DH[i].
+### OPL exception: Processing failed.

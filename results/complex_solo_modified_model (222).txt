@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 43:5-6 datas/complex_solo.dat: Element "d_SC" not defined.
+### OPL exception: Processing failed.

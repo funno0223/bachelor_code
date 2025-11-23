@@ -1,0 +1,243 @@
+
+<<< setup
+
+INFO: Calculating Comprehensive Stretch Costs (Relaxed Version)...
+INFO: Stretch Cost Table Generated (Relaxed V2).
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 61465 rows and 1034884 columns.
+MIP Presolve added 228 rows and 114 columns.
+MIP Presolve modified 26988 coefficients.
+Aggregator did 6 substitutions.
+Reduced MIP has 8761 rows, 10283 columns, and 364706 nonzeros.
+Reduced MIP has 9173 binaries, 0 generals, 0 SOSs, and 612 indicators.
+Presolve time = 3.58 sec. (8591.45 ticks)
+Probing fixed 630 vars, tightened 2049 bounds.
+Probing changed sense of 1238 constraints.
+Probing time = 0.07 sec. (34.56 ticks)
+Cover probing fixed 0 vars, tightened 32 bounds.
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 508 rows and 793 columns.
+MIP Presolve modified 911 coefficients.
+Aggregator did 137 substitutions.
+Reduced MIP has 8113 rows, 9353 columns, and 338138 nonzeros.
+Reduced MIP has 8417 binaries, 98 generals, 0 SOSs, and 602 indicators.
+Presolve time = 0.41 sec. (698.00 ticks)
+Classifier predicts products in MIQP should be linearized.
+Probing time = 0.02 sec. (5.71 ticks)
+Clique table members: 24973.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.67 sec. (632.57 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       40.6791   673                     40.6791     5231         
+      0     0       44.5612   961                   Cuts: 364     7180         
+*     0+    0                          182.0948       44.5612            75.53%
+      0     0       44.9672   813      182.0948     Cuts: 279     7831   75.31%
+*     0+    0                          147.3878       44.9672            69.49%
+      0     0       45.4083  1090      147.3878     Cuts: 146     8521   69.19%
+*     0+    0                          108.9400       45.4083            58.32%
+*     0+    0                           90.1396       45.4083            49.62%
+      0     0  -1.00000e+75     0       90.1396       45.4083     8521   49.62%
+*     0+    0                           70.3209       45.4083            35.43%
+      0     0       45.6132  1038       70.3209     Cuts: 141     9034   35.14%
+      0     0       45.7928  1130       70.3209     Cuts: 107     9506   34.88%
+Detecting symmetries...
+      0     0       45.8958  1153       70.3209     Cuts: 124     9814   34.73%
+      0     0       46.0249  1143       70.3209      Cuts: 94    10171   34.55%
+      0     0       46.1456  1132       70.3209      Cuts: 79    10555   34.38%
+      0     0       46.2242  1095       70.3209      Cuts: 63    10851   34.27%
+      0     0       46.2635  1108       70.3209      Cuts: 53    11049   34.21%
+      0     0       46.2894  1141       70.3209      Cuts: 29    11179   34.17%
+      0     0       46.3011  1172       70.3209      Cuts: 22    11280   34.16%
+      0     0       46.3151  1164       70.3209      Cuts: 18    11390   34.14%
+      0     0       46.3321  1087       70.3209      Cuts: 19    11546   34.11%
+      0     0       46.3386  1165       70.3209      Cuts: 19    11607   34.10%
+      0     0       46.3518  1138       70.3209      Cuts: 15    11737   34.09%
+      0     0       46.3534  1150       70.3209      Cuts: 32    11811   34.08%
+Detecting symmetries...
+      0     2       46.3534  1137       70.3209       46.3534    11811   34.08%
+Elapsed time = 12.72 sec. (21350.22 ticks, tree = 0.02 MB, solutions = 5)
+      6     4       46.7174  1002       70.3209       46.3709    12162   34.06%
+*    11+    4                           64.9814       46.7293            28.09%
+     25    25       51.1516  1016       64.9814       46.7380    15677   28.07%
+*    28+    6                           64.9814       46.7380            28.07%
+     49    28       51.4780   633       64.9814       46.9781    16646   27.71%
+     69    61       47.7992   986       64.9814       47.1801    24480   27.39%
+     92    63       52.9330   829       64.9814       47.1801    25618   27.39%
+    118    95       58.4014   755       64.9814       47.1801    34013   27.39%
+    160   120       52.1047   844       64.9814       47.1801    41458   27.39%
+    196   160       52.1139   859       64.9814       47.1801    49811   27.39%
+    229   172        cutoff             64.9814       47.1801    51831   27.39%
+*   239   194      integral     0       62.9554       47.1801    59010   25.06%
+Elapsed time = 16.67 sec. (23670.17 ticks, tree = 2.57 MB, solutions = 12)
+*   313   207      integral     0       60.7304       47.1801    70997   22.31%
+    389   203        cutoff             60.7304       47.1801    89804   22.31%
+*   490   266      integral     0       58.9583       47.1801   106569   19.98%
+    698   314       56.3502   459       58.9583       47.1801   130827   19.98%
+    940   451       55.5357   846       58.9583       48.0227   160320   18.55%
+   1145   567       58.1614   428       58.9583       48.0227   189097   18.55%
+*  1240+  551                           56.9790       48.0227            15.72%
+*  1242+  546                           55.6870       48.0227            13.76%
+   1371   292       52.7481   970       55.6870       49.6901   230377   10.77%
+   1633   285        cutoff             55.6870       50.4568   245676    9.39%
+*  1680+  334                           55.2821       50.4568             8.73%
+*  1705   315      integral     0       54.1641       50.4568   273587    6.84%
+*  1971   307      integral     0       52.5361       50.8723   290583    3.17%
+   2015   281       53.5779   902       52.5361       51.0096   287723    2.91%
+
+GUB cover cuts applied:  5
+Clique cuts applied:  116
+Cover cuts applied:  32
+Implied bound cuts applied:  7
+Flow cuts applied:  23
+Mixed integer rounding cuts applied:  196
+Zero-half cuts applied:  29
+Lift and project cuts applied:  4
+Gomory fractional cuts applied:  21
+
+Root node processing (before b&c):
+  Real time             =   12.49 sec. (21303.44 ticks)
+Parallel b&c, 12 threads:
+  Real time             =   20.17 sec. (10832.14 ticks)
+  Sync time (average)   =    2.69 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   32.66 sec. (32135.58 ticks)
+>>> 解が見つかりました。Objective: 52.536083225
+Note	String	Fret	Handposition	Finger
+A4	4	19	15	3
+A4	4	19	15	3
+A4	4	19	15	4
+G4	4	17	15	4
+F4	4	15	15	4
+E4	4	14	15	4
+F4	4	15	15	4
+E4	4	14	15	4
+D4	4	12	15	3
+Cs4	4	11	15	2
+As4	4	20	15	3
+Cs4	4	11	15	2
+Gs4	4	18	15	2
+A4	4	19	15	2
+D5	3	19	15	3
+E5	2	17	15	2
+F5	2	18	15	2
+E5	2	17	15	2
+F5	2	18	15	2
+G5	2	20	15	2
+F5	2	18	15	2
+G5	1	15	15	1
+A5	1	17	15	2
+R	0	0	0	x
+C6	1	20	15	2
+C6	1	20	16	2
+R	0	0	0	x
+As5	1	18	16	2
+A5	2	22	16	3
+G5	2	20	16	2
+F5	2	18	16	2
+R	0	0	0	x
+E5	2	17	16	2
+F5	2	18	16	2
+E5	2	17	16	2
+D5	2	15	16	2
+Cs5	2	14	16	2
+C5	2	13	16	2
+A5	2	22	16	3
+C5	3	17	16	2
+As4	3	15	16	2
+G5	2	20	16	3
+As4	3	15	16	2
+A4	3	14	16	2
+F5	3	22	16	2
+E5	3	21	16	2
+D5	3	19	16	2
+C5	3	17	16	2
+R	0	0	0	x
+A4	3	14	16	2
+As4	3	15	16	3
+C5	3	17	16	3
+F5	3	22	16	3
+G5	2	20	16	2
+A5	2	22	16	2
+G5	2	20	16	2
+F5	2	18	16	2
+A4	4	19	16	3
+As4	4	20	16	3
+A4	4	19	16	2
+G4	5	22	16	3
+F4	5	20	16	3
+E4	5	19	16	3
+D4	5	17	16	3
+Cs4	5	16	16	2
+R	0	0	0	x
+A3	5	12	16	2
+D4	5	17	14	3
+C4	5	15	14	3
+D4	5	17	14	4
+F4	4	15	14	3
+F4	4	15	14	3
+F4	4	15	14	3
+F4	4	15	14	3
+G4	4	17	14	3
+G4	4	17	14	3
+G4	4	17	14	3
+G4	4	17	14	3
+A4	4	19	14	3
+A4	4	19	14	3
+C5	3	17	14	2
+C5	3	17	14	3
+D5	2	15	14	2
+D5	2	15	14	2
+E5	2	17	14	2
+E5	2	17	14	2
+F5	2	18	14	2
+F5	2	18	14	2
+F5	2	18	14	2
+F5	2	18	14	2
+G5	1	15	14	1
+G5	1	15	14	1
+G5	1	15	14	1
+G5	1	15	14	1
+A5	1	17	14	2
+C6	1	20	14	2
+Cs5	2	14	14	1
+F5	2	18	14	1
+C6	1	20	14	2
+As5	1	18	14	1
+F5	2	18	14	1
+Cs5	3	18	14	1
+C5	3	17	14	1
+Cs5	3	18	14	2
+C5	3	17	14	2
+As4	3	15	14	2
+Cs5	3	18	14	2
+R	0	0	0	x
+As4	3	15	14	2
+R	0	0	0	x
+A4	3	14	14	1
+
+
+--- Cost Breakdown ---
+  Position Change (PC): 2.419092314
+  String Change   (SC): 35.671202566
+  Stretch & Hold  (ST): 14.445788345
+  Open String     (NO): 0
+-----------------------------------------
+  Total Cost (Sum)    : 52.536083225
+-----------------------------------------
+main returns 0
+
+<<< main
+
+
+<<< done
+

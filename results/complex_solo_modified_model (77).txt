@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 28:8-9 datas/complex_solo.dat: Element "M_value" not defined.
+### OPL exception: Processing failed.

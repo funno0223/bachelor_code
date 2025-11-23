@@ -1,0 +1,9 @@
+
+<<< setup
+
+*** ERROR[DATA_001] at 26:7-8 datas/data.dat: Data parsing error: syntax error, unexpected (identifier), expecting from or to.
+*** ERROR[GENERATE_217] at 35:1-25 models/model.mod: External data element "scaleLength" was not defined.
+*** ERROR[GENERATE_202] at 68:0 models/model.mod: Data element "scaleLength" not defined.
+
+<<< generate
+

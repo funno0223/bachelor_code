@@ -1,0 +1,7 @@
+
+<<< setup
+
+*** ERROR[DATA_001] at 29:6-17 datas/data.dat: Data parsing error: syntax error, unexpected (identifier), expecting from or to.
+*** ERROR[DATA_001] at 30:6-11 datas/data.dat: Data parsing error: syntax error, unexpected (identifier), expecting from or to.
+*** FATAL[PARSE_103] at 30:16-17 datas/data.dat: Unexpected character in ".", try using quoted string data, or check the encoding.
+### OPL exception: Processing failed.

@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** FATAL[PARSE_102] at 14:4-5 models/modified_model.mod: Unexpected character in "�".
+### OPL exception: Processing failed.

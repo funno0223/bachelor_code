@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 38:26-27 datas/青春コンプレックス.dat: Element "maxHighPositionMultiplier" not defined.
+### OPL exception: Processing failed.

@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR at 70:2 models/model.mod: Scripting parser error: illegal use of a reserved keyword.
+### OPL exception: Impossible to load model.

@@ -1,0 +1,15 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 43:1-16 models/model.mod: External data element "f_ub" was not defined.
+*** ERROR[GENERATE_217] at 42:1-16 models/model.mod: External data element "f_lb" was not defined.
+*** ERROR[GENERATE_202] at 44:24-31 models/model.mod: Data element "f_lb" not defined.
+*** ERROR[GENERATE_209] at 44:24-31 models/model.mod: Invalid initialization expression for element "HandPositionLB".
+*** ERROR[GENERATE_210] at 113:12-26 models/model.mod: Element "HandPositionLB" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 113:3-114:76 models/model.mod: Invalid initialization expression for element "DH".
+*** ERROR[GENERATE_210] at 119:39-41 models/model.mod: Element "DH" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 119:22-44 models/model.mod: Invalid initialization expression for element "tot_DH".
+*** ERROR[GENERATE_210] at 128:23-29 models/model.mod: Element "tot_DH" is not available, see previous error(s).
+
+<<< generate
+

@@ -1,0 +1,83 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 3 times.
+MIP Presolve eliminated 157926 rows and 151087 columns.
+MIP Presolve modified 3089 coefficients.
+Aggregator did 114 substitutions.
+Reduced MIP has 441 rows, 1220 columns, and 8713 nonzeros.
+Reduced MIP has 1190 binaries, 0 generals, 0 SOSs, and 20 indicators.
+Presolve time = 1.51 sec. (1721.88 ticks)
+Found incumbent of value 3.000000 after 2.17 sec. (2385.12 ticks)
+Probing fixed 12 vars, tightened 30 bounds.
+Probing changed sense of 68 constraints.
+Probing time = 0.02 sec. (20.78 ticks)
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 20 rows and 24 columns.
+MIP Presolve modified 46 coefficients.
+Aggregator did 55 substitutions.
+Reduced MIP has 366 rows, 1141 columns, and 8837 nonzeros.
+Reduced MIP has 1117 binaries, 0 generals, 0 SOSs, and 20 indicators.
+Presolve time = 0.01 sec. (12.19 ticks)
+Probing time = 0.00 sec. (2.96 ticks)
+Clique table members: 2194.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.00 sec. (2.31 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            3.0000        0.0000           100.00%
+      0     0        0.0000    21        3.0000        0.0000       42  100.00%
+      0     0        0.0000    30        3.0000      Cuts: 19       64  100.00%
+      0     0        0.0000    10        3.0000      Cuts: 10       70  100.00%
+      0     0        0.0000    35        3.0000      Cuts: 11      103  100.00%
+*     0+    0                            1.0000        0.0000           100.00%
+*     0+    0                            0.0000        0.0000             0.00%
+      0     0        cutoff              0.0000        0.0000      103    0.00%
+Elapsed time = 2.24 sec. (2484.40 ticks, tree = 0.01 MB, solutions = 3)
+
+Flow cuts applied:  2
+Mixed integer rounding cuts applied:  4
+
+Root node processing (before b&c):
+  Real time             =    2.25 sec. (2490.54 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    2.25 sec. (2490.54 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 0
+Note	String	Fret	Handposition	Finger
+C4	3	5	2	3	
+D4	3	7	2	3	
+E4	3	9	1	4	
+F4	3	10	2	2	
+G4	3	12	1	3	
+E4	3	9	1	2	
+D4	3	7	1	2	
+C4	3	5	2	3	
+B3	3	4	1	3	
+C4	3	5	1	2	
+G4	3	12	3	3	
+
+3,3,3,3,3,3,3,3,3,3,3,
+5,7,9,10,12,9,7,5,4,5,12,
+3,3,4,2,3,2,2,3,3,2,3,
+<<< post process
+
+
+<<< done
+

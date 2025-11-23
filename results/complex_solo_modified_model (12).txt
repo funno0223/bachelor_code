@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 79:9-90 models/modified_model.mod: Name "alpha_PC" does not exist.
+### OPL exception: Impossible to load model.

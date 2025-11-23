@@ -1,0 +1,6 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 38:17-34 models/model.mod: Name "FingressoButFirst" does not exist.
+*** ERROR[GENERATE_035] at 175:91-100 models/model.mod: Circular dependency declaring "SP_max_mm".
+### OPL exception: Impossible to load model.

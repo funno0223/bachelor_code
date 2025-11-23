@@ -1,0 +1,22 @@
+
+<<< setup
+
+
+=== DEBUG: Accumulated Time Check ===
+*** ERROR[SCRIPT_002] at 87:0 models/modified_model.mod: Scripting runtime error: Element "prevNoteIndex" does not exist in OPL model..
+*** ERROR[SCRIPT_004] at 81:1-8 models/modified_model.mod: Execution of "anonymous#1" failed: "models/modified_model.mod", line 87: Element "prevNoteIndex" does not exist in OPL model..
+INFO: Slant Model Initialized.
+  - String 1 Reach (Index/Pinky): 70 / 101.961524227
+  - String 6 Reach (Index/Pinky): 0 / 100
+INFO: HS Cost Table updated with Tolerance (10mm).
+INFO: Accumulated Time Logic Initialized.
+  - Strict Legato (< 50 ms)
+  - Relaxed/Free  (> -171.303431187 ms)
+*** ERROR[INTERFACE_003] at 461:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

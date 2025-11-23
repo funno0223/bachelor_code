@@ -1,0 +1,233 @@
+
+<<< setup
+
+INFO: Slant Model & Effective Lengths Initialized.
+INFO: HS Cost Table updated with Tolerance (5mm).
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1565107 rows and 1038663 columns.
+MIP Presolve added 72 rows and 36 columns.
+MIP Presolve modified 10911 coefficients.
+Aggregator did 6 substitutions.
+Reduced MIP has 5418 rows, 6426 columns, and 85067 nonzeros.
+Reduced MIP has 5313 binaries, 0 generals, 0 SOSs, and 612 indicators.
+Presolve time = 1.41 sec. (2507.32 ticks)
+Probing fixed 582 vars, tightened 1590 bounds.
+Probing changed sense of 1256 constraints.
+Probing time = 0.04 sec. (26.03 ticks)
+Cover probing fixed 10 vars, tightened 48 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 545 rows and 1046 columns.
+MIP Presolve modified 1034 coefficients.
+Aggregator did 136 substitutions.
+Reduced MIP has 4737 rows, 5244 columns, and 72525 nonzeros.
+Reduced MIP has 4302 binaries, 98 generals, 0 SOSs, and 606 indicators.
+Presolve time = 0.10 sec. (150.58 ticks)
+Probing fixed 2 vars, tightened 564 bounds.
+Probing changed sense of 1 constraints.
+Probing time = 0.02 sec. (14.96 ticks)
+Cover probing fixed 0 vars, tightened 180 bounds.
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 112 rows and 69 columns.
+MIP Presolve modified 653 coefficients.
+Aggregator did 4 substitutions.
+Reduced MIP has 4621 rows, 5171 columns, and 70334 nonzeros.
+Reduced MIP has 4246 binaries, 98 generals, 0 SOSs, and 594 indicators.
+Presolve time = 0.09 sec. (122.68 ticks)
+Classifier predicts products in MIQP should be linearized.
+Probing fixed 1 vars, tightened 0 bounds.
+Probing time = 0.02 sec. (10.69 ticks)
+Cover probing fixed 0 vars, tightened 5 bounds.
+Clique table members: 14149.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.26 sec. (274.11 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      107.8150   811                    107.8150     3048         
+*     0+    0                          258.1602      107.8150            58.24%
+      0     0      117.2459   939      258.1602     Cuts: 288     3695   54.58%
+*     0+    0                          137.2551      117.2459            14.58%
+      0     0      120.0084   931      137.2551     Cuts: 187     4150   12.57%
+      0     0      121.1594   972      137.2551      Cuts: 91     4422   11.73%
+      0     0      121.7185   994      137.2551      Cuts: 76     4652   11.32%
+      0     0      122.2324   978      137.2551      Cuts: 69     4821   10.95%
+Detecting symmetries...
+      0     0      122.3937  1016      137.2551      Cuts: 38     4943   10.83%
+      0     0      122.5180  1028      137.2551      Cuts: 35     5065   10.74%
+      0     0      122.7518  1027      137.2551      Cuts: 43     5191   10.57%
+      0     0      122.8277  1049      137.2551      Cuts: 38     5263   10.51%
+*     0+    0                          130.5509      122.8277             5.92%
+      0     0      122.9047  1057      130.5509      Cuts: 38     5337    5.86%
+      0     0      123.0408  1043      130.5509      Cuts: 49     5435    5.75%
+      0     0      123.0996  1061      130.5509      Cuts: 19     5502    5.71%
+      0     0      123.1378  1062      130.5509      Cuts: 16     5555    5.68%
+      0     0      123.1437  1070      130.5509       Cuts: 9     5577    5.67%
+      0     0      123.1662  1068      130.5509       Cuts: 8     5626    5.66%
+      0     0      123.1918  1080      130.5509      Cuts: 12     5685    5.64%
+      0     0      123.2005  1097      130.5509       Cuts: 7     5704    5.63%
+*     0+    0                          130.3584      123.2005             5.49%
+*     0+    0                          130.1535      123.2005             5.34%
+Detecting symmetries...
+      0     2      123.3864  1042      130.1535      123.2005     5823    5.34%
+Elapsed time = 6.36 sec. (7048.87 ticks, tree = 0.02 MB, solutions = 5)
+     49    12      126.5150   895      130.1535      125.1782     7917    3.82%
+    163    19      129.1287   654      130.1535      126.2017    20818    3.04%
+*   196     7      integral     0      129.3599      127.9805    23967    1.07%
+*   199     7      integral     0      128.8470      127.9805    23972    0.67%
+
+GUB cover cuts applied:  8
+Clique cuts applied:  72
+Cover cuts applied:  8
+Implied bound cuts applied:  24
+Flow cuts applied:  7
+Mixed integer rounding cuts applied:  146
+Zero-half cuts applied:  36
+Lift and project cuts applied:  13
+Gomory fractional cuts applied:  10
+
+Root node processing (before b&c):
+  Real time             =    6.19 sec. (7055.92 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    1.14 sec. (895.96 ticks)
+  Sync time (average)   =    0.38 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    7.33 sec. (7951.88 ticks)
+>>> 解が見つかりました。Objective: 128.846961403
+Note	String	Fret	Handposition	Finger
+A4	4	19	17	2
+A4	4	19	17	2
+A4	4	19	17	2
+G4	4	17	17	1
+F4	5	20	17	3
+E4	5	19	17	2
+F4	5	20	17	3
+E4	5	19	17	2
+D4	5	17	17	1
+Cs4	5	16	16	1
+As4	4	20	16	4
+Cs4	5	16	16	1
+Gs4	4	18	16	2
+A4	4	19	16	2
+D5	3	19	16	3
+E5	2	17	16	1
+F5	2	18	16	2
+E5	2	17	16	1
+F5	2	18	16	2
+G5	2	20	16	3
+F5	2	18	16	2
+G5	2	20	16	3
+A5	1	17	16	1
+R	0	0	0	x
+C6	1	20	16	3
+C6	1	20	17	2
+R	0	0	0	x
+As5	1	18	17	1
+A5	2	22	17	4
+G5	2	20	17	2
+F5	2	18	17	1
+R	0	0	0	x
+E5	3	21	17	3
+F5	3	22	17	4
+E5	3	21	17	3
+D5	3	19	17	2
+Cs5	3	18	17	1
+C5	3	17	17	1
+A5	2	22	17	4
+C5	3	17	17	1
+As4	4	20	17	3
+G5	2	20	17	4
+As4	4	20	17	3
+A4	4	19	17	2
+F5	3	22	17	4
+E5	3	21	17	3
+D5	3	19	17	2
+C5	3	17	17	1
+R	0	0	0	x
+A4	4	19	17	2
+As4	4	20	17	3
+C5	4	22	17	4
+F5	2	18	17	1
+G5	2	20	17	2
+A5	2	22	17	4
+G5	2	20	17	2
+F5	2	18	17	1
+A4	4	19	17	2
+As4	4	20	17	3
+A4	4	19	17	2
+G4	4	17	17	1
+F4	5	20	17	3
+E4	5	19	17	2
+D4	5	17	17	1
+Cs4	6	21	17	3
+R	0	0	0	x
+A3	6	17	17	1
+D4	5	17	17	1
+C4	6	20	17	3
+D4	5	17	17	1
+F4	5	20	17	3
+F4	5	20	17	3
+F4	5	20	17	3
+F4	5	20	17	3
+G4	4	17	17	1
+G4	4	17	17	1
+G4	4	17	17	1
+G4	4	17	17	1
+A4	4	19	17	2
+A4	4	19	17	2
+C5	4	22	17	4
+C5	4	22	17	4
+D5	3	19	17	2
+D5	3	19	17	2
+E5	3	21	17	3
+E5	3	21	17	3
+F5	2	18	17	1
+F5	2	18	17	1
+F5	2	18	17	1
+F5	2	18	17	1
+G5	2	20	17	2
+G5	2	20	17	2
+G5	2	20	17	2
+G5	2	20	17	2
+A5	2	22	17	4
+C6	1	20	17	2
+Cs5	3	18	17	1
+F5	2	18	17	1
+C6	1	20	17	2
+As5	1	18	17	1
+F5	2	18	17	1
+Cs5	3	18	17	1
+C5	3	17	17	1
+Cs5	3	18	17	1
+C5	4	22	17	4
+As4	4	20	17	3
+Cs5	3	18	17	1
+R	0	0	0	x
+As4	4	20	17	3
+R	0	0	0	x
+A4	4	19	17	2
+
+
+--- Cost Breakdown ---
+  Position Change (PC): 4.690675569
+  String Change   (SC): 75.891678961
+  Hand Spread     (HS): 22.664606874
+  Difficulty Hold (DH): 25.6
+  Open String     (NO): 0
+-----------------------------------------
+  Total Cost (Sum)    : 128.846961403
+-----------------------------------------
+main returns 0
+
+<<< main
+
+
+<<< done
+

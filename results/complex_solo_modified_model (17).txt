@@ -1,0 +1,9 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 56:1-31 models/modified_model.mod: External data element "slide_pc_discount" was not defined.
+*** ERROR[GENERATE_202] at 252:3-274:4 models/modified_model.mod: Data element "slide_pc_discount" not defined.
+*** ERROR[GENERATE_101] at 252:3-274:4 models/modified_model.mod: Constraint could not be created.
+
+<<< generate
+

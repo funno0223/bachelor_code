@@ -1,0 +1,18 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 7:1-23 model.mod: External data element "f_max" was not defined.
+*** ERROR[GENERATE_217] at 8:1-18 model.mod: External data element "s_max" was not defined.
+*** ERROR[GENERATE_217] at 21:1-50 model.mod: External data element "Combinations" was not defined.
+*** ERROR[GENERATE_217] at 20:1-41 model.mod: External data element "OpenStrings" was not defined.
+*** ERROR[GENERATE_217] at 12:1-31 model.mod: External data element "PlayableSounds" was not defined.
+*** ERROR[GENERATE_202] at 33:22-30 model.mod: Data element "f_max" not defined.
+*** ERROR[GENERATE_209] at 33:22-30 model.mod: Invalid initialization expression for element "HandPosition".
+*** ERROR[GENERATE_210] at 75:11-23 model.mod: Element "HandPosition" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 74:38-76:3 model.mod: Invalid initialization expression for element "PC".
+*** ERROR[GENERATE_210] at 94:47-49 model.mod: Element "PC" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 94:22-52 model.mod: Invalid initialization expression for element "tot_PC".
+*** ERROR[GENERATE_210] at 103:21-27 model.mod: Element "tot_PC" is not available, see previous error(s).
+
+<<< generate
+

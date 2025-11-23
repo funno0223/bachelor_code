@@ -1,0 +1,23 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 159:21-46 models/modified_model.mod: Name "MaxPosJump" does not exist.
+*** ERROR[GENERATE_005] at 366:1-83 models/modified_model.mod: Name "tot_PC_Raw" already defined.
+*** ERROR[GENERATE_006] at 367:53-62 models/modified_model.mod: Name "SlideDist" does not exist.
+*** ERROR[GENERATE_005] at 372:1-75 models/modified_model.mod: Name "tot_SC" already defined.
+*** ERROR[GENERATE_005] at 373:1-44 models/modified_model.mod: Name "tot_HS" already defined.
+*** ERROR[GENERATE_005] at 374:1-44 models/modified_model.mod: Name "tot_DH" already defined.
+*** ERROR[GENERATE_005] at 375:1-92 models/modified_model.mod: Name "tot_NO" already defined.
+*** ERROR[GENERATE_041] at 379:1-384:29 models/modified_model.mod: Objective must be defined before constraints.
+*** ERROR[GENERATE_005] at 389:9-392:38 models/modified_model.mod: Name "vinc2" already defined.
+*** ERROR[GENERATE_005] at 396:9-398:91 models/modified_model.mod: Name "vinc2neg" already defined.
+*** ERROR[GENERATE_005] at 402:9-403:49 models/modified_model.mod: Name "vinc3" already defined.
+*** ERROR[GENERATE_005] at 408:13-409:86 models/modified_model.mod: Name "vinc4" already defined.
+*** ERROR[GENERATE_005] at 414:13-415:83 models/modified_model.mod: Name "vinc5" already defined.
+*** ERROR[GENERATE_005] at 418:9-419:59 models/modified_model.mod: Name "vinc6" already defined.
+*** ERROR[GENERATE_005] at 426:21-427:98 models/modified_model.mod: Name "vinc7" already defined.
+*** ERROR[GENERATE_006] at 441:21-46 models/modified_model.mod: Name "MaxPosJump" does not exist.
+*** ERROR[GENERATE_005] at 448:17-449:55 models/modified_model.mod: Name "vinc9" already defined.
+*** ERROR[GENERATE_005] at 457:17-459:67 models/modified_model.mod: Name "vinc10c" already defined.
+*** ERROR[GENERATE_049] at 471:1-5 models/modified_model.mod: There can be at most one 'main' execute block.
+### OPL exception: Impossible to load model.

@@ -1,0 +1,8 @@
+
+<<< setup
+
+*** ERROR[PARSE_001] at 73:5-9 models/model.mod: syntax error, unexpected else
+*** ERROR[PARSE_001] at 75:3-4 models/model.mod: syntax error, unexpected '}'
+*** ERROR[PARSE_001] at 81:2-3 models/model.mod: syntax error, unexpected '}'
+*** ERROR[PARSE_001] at 84:2-3 models/model.mod: syntax error, unexpected '}'
+### OPL exception: Impossible to load model.

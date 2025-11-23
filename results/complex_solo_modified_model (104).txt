@@ -1,0 +1,51 @@
+
+<<< setup
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_Emphasis_MIP                            1
+CPXPARAM_MIP_Tolerances_MIPGap                   0.050000000000000003
+Presolve has eliminated 866616 rows and 1342609 columns...
+Tried aggregator 2 times.
+MIQCP Presolve eliminated 949868 rows and 1342864 columns.
+MIQCP Presolve modified 17884 coefficients.
+Aggregator did 428 substitutions.
+Reduced MIQCP has 21622 rows, 37194 columns, and 203597 nonzeros.
+Reduced MIQCP has 8164 binaries, 0 generals, 0 SOSs, and 848 indicators.
+Reduced MIQCP has 97 quadratic constraints.
+Presolve time = 23.26 sec. (29903.75 ticks)
+Probing fixed 905 vars, tightened 5897 bounds.
+Probing changed sense of 1638 constraints.
+Probing time = 0.39 sec. (109.28 ticks)
+Clique table members: 108584.
+MIP emphasis: integer feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.11 sec. (190.53 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0    -4615.3573     0                -140460.4741     3405         
+      0     0    -4571.4354   355                     Cone: 1     3789         
+      0     0    -4544.3261   476                     Cone: 2     4093         
+      0     0    -4534.2269   479                     Cone: 3     4290         
+      0     0    -4523.8816   542                     Cone: 4     4556         
+      0     0    -4516.3132   533                     Cone: 5     4814         
+      0     0    -4509.7082   549                     Cone: 6     5060         
+      0     0    -3810.9599   572                 Cone: 11558    18853         
+      0     0    -3802.6023  1739                 Cone: 14490    21006         
+      0     0    -3798.2638  2128                 Cone: 17273    23411         
+      0     0    -3796.0940  2189                 Cone: 19798    25886         
+      0     0    -3795.0668  2222                 Cone: 22012    28445         
+      0     0    -3794.5460  2232                 Cone: 23891    30852         
+      0     0    -3794.3203  2245                 Cone: 25545    33081         
+      0     0    -3794.2451  2254                 Cone: 26762    34833         
+      0     0    -3794.2194  2257                 Cone: 27462    35989         
+      0     0    -3794.2098  2257                 Cone: 27886    36774         
+      0     0    -3794.2068  2257                 Cone: 28142    37173         
+      0     0    -3794.2060  2257                 Cone: 28216    37327         
+      0     0    -3794.2058  2257                 Cone: 28244    37400         
+      0     0    -3794.2057  2257                 Cone: 28251    37412         
+      0     0    -3794.2057  2257                 Cone: 28254    37420         
+      0     0    -3794.2057  2257                 Cone: 28255    37423         
+      0     0    -3794.2057  2257                  -3794.2057    37423         

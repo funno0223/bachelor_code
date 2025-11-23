@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_022] at 243:19-53 models/modified_model.mod: Function operator>(int,int) not available in context CPLEX.
+### OPL exception: Impossible to load model.

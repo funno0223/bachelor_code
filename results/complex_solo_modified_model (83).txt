@@ -1,0 +1,14 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 54:1-21 models/modified_model.mod: External data element "M_value" was not defined.
+*** ERROR[GENERATE_217] at 53:1-30 models/modified_model.mod: External data element "rest_pc_discount" was not defined.
+*** ERROR[GENERATE_217] at 52:1-36 models/modified_model.mod: External data element "connectedTimeThreshold" was not defined.
+*** ERROR[INTERFACE_003] at 212:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

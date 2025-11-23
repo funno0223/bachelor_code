@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 31:12-13 datas/青春コンプレックス.dat: Element "scaleLength" not defined.
+### OPL exception: Processing failed.

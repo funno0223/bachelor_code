@@ -1,0 +1,23 @@
+
+<<< setup
+
+*** ERROR at 313:0 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 313:1 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 313:2 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 355:0 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 355:1 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 355:2 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 385:0 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 385:1 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 385:2 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 401:0 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 401:1 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 401:2 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 409:0 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 409:1 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 409:2 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 424:0 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 424:1 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 424:2 models/modified_model.mod: Scripting parser error: illegal character '`'.
+*** ERROR at 452:0 models/modified_model.mod: Scripting parser error: too many '}'.
+### OPL exception: Impossible to load model.

@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** FATAL[PARSE_103] at 7:0-1 datas/complex_solo.dat: Unexpected character in "-", try using quoted string data, or check the encoding.
+### OPL exception: Processing failed.

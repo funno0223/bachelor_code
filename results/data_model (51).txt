@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 42:8-9 datas/data.dat: Element "f_ideal" not defined.
+### OPL exception: Processing failed.

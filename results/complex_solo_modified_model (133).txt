@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[PARSE_001] at 121:1-6 models/modified_model.mod: syntax error, unexpected dexpr, expecting ';'
+### OPL exception: Impossible to load model.

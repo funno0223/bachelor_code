@@ -1,0 +1,11 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 230:4-17 models/modified_model.mod: Name "prevNoteIndex" does not exist.
+*** ERROR[GENERATE_006] at 237:4-17 models/modified_model.mod: Name "prevNoteIndex" does not exist.
+*** ERROR[GENERATE_006] at 269:21-36 models/modified_model.mod: Name "accumulatedTime" does not exist.
+*** ERROR[GENERATE_006] at 317:35-48 models/modified_model.mod: Name "prevNoteIndex" does not exist.
+*** ERROR[GENERATE_006] at 349:32-45 models/modified_model.mod: Name "prevNoteIndex" does not exist.
+*** ERROR[GENERATE_006] at 360:32-45 models/modified_model.mod: Name "prevNoteIndex" does not exist.
+*** ERROR[GENERATE_006] at 371:32-45 models/modified_model.mod: Name "prevNoteIndex" does not exist.
+### OPL exception: Impossible to load model.

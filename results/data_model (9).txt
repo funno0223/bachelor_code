@@ -1,0 +1,6 @@
+
+<<< setup
+
+*** ERROR[GENERATE_001] at 31:1-21 models/model.mod: Cannot use type float for range.
+*** ERROR at 252:0 models/model.mod: Scripting parser error: missing expression.
+### OPL exception: Impossible to load model.

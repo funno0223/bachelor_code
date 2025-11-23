@@ -1,0 +1,7 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 120:46-48 models/modified_model.mod: Name "SC" does not exist.
+*** ERROR[GENERATE_006] at 121:38-40 models/modified_model.mod: Name "HS" does not exist.
+*** ERROR[GENERATE_006] at 122:38-40 models/modified_model.mod: Name "DH" does not exist.
+### OPL exception: Impossible to load model.

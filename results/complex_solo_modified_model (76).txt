@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 28:17-18 datas/complex_solo.dat: Element "rest_pc_discount" not defined.
+### OPL exception: Processing failed.

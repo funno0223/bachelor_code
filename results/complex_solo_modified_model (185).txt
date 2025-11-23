@@ -1,0 +1,18 @@
+
+<<< setup
+
+INFO: Slant Model Initialized.
+INFO: HS Cost Table updated with Tolerance (10mm).
+INFO: Accumulated Time Logic Initialized.
+  - Relaxed/Free  (> 171.303431187 ms)
+*** ERROR[GENERATE_103] at 320:3-359:4 models/modified_model.mod: CPLEX cannot extract expression: forall(i in 2..111) if ( note[i] != 0 && prevNoteIndex[i] != i ) (forall(p in 1..22) (forall(h in 1..4) (forall(c in Combinations[note[i]]) Trans_Hard_SameFinger: y[i][p][h][c]+sum(p_prev in 1..22, c_prev in Combinations[note[prevNoteIndex[i]]]: !(c.corda == c_prev.corda || c.fret == c_prev.fret && abs(c.corda+c_prev.corda*(-1)) == 1)) y[prevNoteIndex[i]][p_prev][h][c_prev] <= 1)) && (forall(h in 1..4) (forall(c in Combinations[note[i]]) Trans_Hard_FingerLogic: y[i][p][h][c]+sum(p_prev in 1..22, h_prev in 1..4, c_prev in Combinations[note[prevNoteIndex[i]]]: c.fret == c_prev.fret && c.corda != c_prev.corda && (c.corda < c_prev.corda && h < h_prev || c.corda > c_prev.corda && h > h_prev) || c.corda == c_prev.corda && (c.fret > c_prev.fret && h < h_prev || c.fret < c_prev.fret && h > h_prev)) y[prevNoteIndex[i]][p_prev][h_prev][c_prev] <= 1))); else true.
+*** ERROR[GENERATE_103] at 362:3-385:4 models/modified_model.mod: CPLEX cannot extract expression: forall(i in 2..111) if ( note[i] != 0 && prevNoteIndex[i] != i && accumulatedTime[i] < 171.303431186583 ) (forall(p in 1..22) (forall(h in 1..4) (forall(c in Combinations[note[i]]) Trans_Soft_Logic: y[i][p][h][c]+sum(p_prev in 1..22, h_prev in 1..4, c_prev in Combinations[note[prevNoteIndex[i]]]: c.fret > c_prev.fret && h < h_prev && c.corda != c_prev.corda || c.fret < c_prev.fret && h > h_prev && c.corda != c_prev.corda || accumulatedTime[i] <= 50 && !(c.corda == c_prev.corda || p == p_prev)) y[prevNoteIndex[i]][p_prev][h_prev][c_prev] <= 1))); else true.
+*** ERROR[SCRIPT_002] at 394:0 models/modified_model.mod: Scripting runtime error: (in generate) Processing OPL model "modified_model" failed..
+*** ERROR[SCRIPT_004] at 392:1-5 models/modified_model.mod: Execution of "main" failed: "models/modified_model.mod", line 394: generate: Processing OPL model "modified_model" failed..
+main returns -1
+
+<<< main
+
+
+<<< done
+

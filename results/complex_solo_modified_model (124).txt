@@ -1,0 +1,18 @@
+
+<<< setup
+
+*** ERROR[GENERATE_115] at 236:9-248:18 models/modified_model.mod: Constraint labeling not supported for dimensions with variable size, use named constraints instead.
+*** ERROR[GENERATE_209] at 236:9-248:18 models/modified_model.mod: Invalid initialization expression for element "vinc11".
+*** ERROR[GENERATE_200] at 233:3-248:18 models/modified_model.mod: Element "vinc11" not defined.
+*** ERROR[GENERATE_103] at 235:7-248:18 models/modified_model.mod: OPL cannot extract expression: forall(c in Combinations[note[i]]) vinc11: sum(p in 1..22) y[i][p][h][c]+sum(p_prev in 1..22) (sum(h_prev in 1..4) (sum(c_prev in Combinations[note[(i+(-1))]]: c.fret > c_prev.fret && h < h_prev || c.fret < c_prev.fret && h > h_prev) y[(i+(-1))][p_prev][h_prev][c_prev])) <= 1.
+*** ERROR[GENERATE_103] at 233:3-248:18 models/modified_model.mod: OPL cannot extract expression: forall(i in 2..111: isLegato[i] == 1) (forall(h in 1..4) (forall(c in Combinations[note[i]]) vinc11: sum(p in 1..22) y[i][p][h][c]+sum(p_prev in 1..22) (sum(h_prev in 1..4) (sum(c_prev in Combinations[note[(i+(-1))]]: c.fret > c_prev.fret && h < h_prev || c.fret < c_prev.fret && h > h_prev) y[(i+(-1))][p_prev][h_prev][c_prev])) <= 1)).
+*** ERROR[GENERATE_103] at 233:3-248:18 models/modified_model.mod: CPLEX cannot extract expression: forall(i in 2..111: isLegato[i] == 1) (forall(h in 1..4) (forall(c in Combinations[note[i]]) vinc11: sum(p in 1..22) y[i][p][h][c]+sum(p_prev in 1..22) (sum(h_prev in 1..4) (sum(c_prev in Combinations[note[(i+(-1))]]: c.fret > c_prev.fret && h < h_prev || c.fret < c_prev.fret && h > h_prev) y[(i+(-1))][p_prev][h_prev][c_prev])) <= 1)).
+*** ERROR[SCRIPT_002] at 256:0 models/modified_model.mod: Scripting runtime error: (in generate) Processing OPL model "modified_model" failed..
+*** ERROR[SCRIPT_004] at 253:1-5 models/modified_model.mod: Execution of "main" failed: "models/modified_model.mod", line 256: generate: Processing OPL model "modified_model" failed..
+main returns -1
+
+<<< main
+
+
+<<< done
+

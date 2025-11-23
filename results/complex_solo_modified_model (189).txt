@@ -1,0 +1,15 @@
+
+<<< setup
+
+*** ERROR[PARSE_001] at 463:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 464:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 472:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 473:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 474:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 475:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 476:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 477:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 478:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 479:10-11 models/modified_model.mod: syntax error, unexpected '(', expecting (identifier) or '['
+*** ERROR[PARSE_001] at 480:1-2 models/modified_model.mod: syntax error, unexpected '}'
+### OPL exception: Impossible to load model.

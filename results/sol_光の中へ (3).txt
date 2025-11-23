@@ -1,0 +1,26 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 44:1-18 models/model.mod: External data element "d_NO" was not defined.
+*** ERROR[GENERATE_217] at 43:1-18 models/model.mod: External data element "d_DH" was not defined.
+*** ERROR[GENERATE_217] at 42:1-18 models/model.mod: External data element "d_HS" was not defined.
+*** ERROR[GENERATE_217] at 41:1-18 models/model.mod: External data element "d_SC" was not defined.
+*** ERROR[GENERATE_217] at 40:1-18 models/model.mod: External data element "d_PC" was not defined.
+*** ERROR[GENERATE_217] at 36:1-16 models/model.mod: External data element "f_ub" was not defined.
+*** ERROR[GENERATE_217] at 35:1-16 models/model.mod: External data element "f_lb" was not defined.
+*** ERROR[GENERATE_217] at 34:1-35 models/model.mod: External data element "SP_max" was not defined.
+*** ERROR[GENERATE_217] at 51:1-22 models/model.mod: External data element "alpha_NO" was not defined.
+*** ERROR[GENERATE_217] at 50:1-22 models/model.mod: External data element "alpha_DH" was not defined.
+*** ERROR[GENERATE_217] at 49:1-22 models/model.mod: External data element "alpha_HS" was not defined.
+*** ERROR[GENERATE_217] at 48:1-22 models/model.mod: External data element "alpha_SC" was not defined.
+*** ERROR[GENERATE_217] at 47:1-22 models/model.mod: External data element "alpha_PC" was not defined.
+*** ERROR[GENERATE_217] at 39:1-25 models/model.mod: External data element "timePerFret" was not defined.
+*** ERROR[GENERATE_202] at 56:0 models/model.mod: Data element "alpha_PC" not defined.
+*** ERROR[GENERATE_202] at 63:1-92 models/model.mod: Data element "alpha_PC" not defined.
+*** ERROR[GENERATE_100] at 63:1-92 models/model.mod: Model assertion failed.
+*** ERROR[GENERATE_202] at 64:1-68 models/model.mod: Data element "alpha_PC" not defined.
+*** ERROR[GENERATE_100] at 64:1-68 models/model.mod: Model assertion failed.
+*** ERROR[GENERATE_202]: Data element "alpha_PC" not defined.
+
+<<< generate
+

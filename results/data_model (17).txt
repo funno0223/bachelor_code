@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** FATAL[PARSE_104] at 1:1-2 models/model.mod: Unexpected character in file, might be compiled by OPL 5.0 or earlier.
+### OPL exception: Processing failed.

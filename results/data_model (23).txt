@@ -1,0 +1,18 @@
+
+<<< setup
+
+*** ERROR[DATA_001] at 38:4-11 datas/data.dat: Data parsing error: syntax error, unexpected (identifier), expecting from or to.
+*** ERROR[DATA_001] at 39:6-18 datas/data.dat: Data parsing error: syntax error, unexpected (identifier), expecting from or to.
+*** ERROR[DATA_001] at 40:6-28 datas/data.dat: Data parsing error: syntax error, unexpected (identifier), expecting from or to.
+*** ERROR[GENERATE_217] at 42:1-19 models/model.mod: External data element "f_ideal" was not defined.
+*** ERROR[GENERATE_217] at 44:1-36 models/model.mod: External data element "defaultAvgFingerLength" was not defined.
+*** ERROR[GENERATE_217] at 43:1-35 models/model.mod: External data element "fingerLength" was not defined.
+*** ERROR[GENERATE_202] at 74:0 models/model.mod: Data element "fingerLength" not defined.
+*** ERROR[GENERATE_202] at 129:3-130:59 models/model.mod: Data element "f_ideal" not defined.
+*** ERROR[GENERATE_209] at 129:3-130:59 models/model.mod: Invalid initialization expression for element "DH".
+*** ERROR[GENERATE_210] at 135:39-41 models/model.mod: Element "DH" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 135:22-44 models/model.mod: Invalid initialization expression for element "tot_DH".
+*** ERROR[GENERATE_210] at 144:23-29 models/model.mod: Element "tot_DH" is not available, see previous error(s).
+
+<<< generate
+

@@ -1,0 +1,271 @@
+
+<<< setup
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_MIP_Tolerances_MIPGap                   0.01
+Presolve has eliminated 1944928 rows and 1344596 columns...
+Tried aggregator 2 times.
+MIP Presolve eliminated 1947309 rows and 1344898 columns.
+MIP Presolve modified 9326 coefficients.
+Aggregator did 318 substitutions.
+Reduced MIP has 5141 rows, 6821 columns, and 67952 nonzeros.
+Reduced MIP has 6005 binaries, 0 generals, 0 SOSs, and 628 indicators.
+Presolve time = 15.58 sec. (16280.84 ticks)
+Probing fixed 754 vars, tightened 499 bounds.
+Probing changed sense of 1576 constraints.
+Probing time = 0.02 sec. (17.18 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 602 rows and 1281 columns.
+MIP Presolve modified 747 coefficients.
+Aggregator did 3 substitutions.
+Reduced MIP has 4536 rows, 5537 columns, and 61269 nonzeros.
+Reduced MIP has 4722 binaries, 0 generals, 0 SOSs, and 628 indicators.
+Presolve time = 0.07 sec. (104.11 ticks)
+Probing fixed 0 vars, tightened 377 bounds.
+Probing time = 0.02 sec. (11.51 ticks)
+Cover probing fixed 0 vars, tightened 11 bounds.
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve modified 346 coefficients.
+Reduced MIP has 4536 rows, 5537 columns, and 61269 nonzeros.
+Reduced MIP has 4722 binaries, 0 generals, 0 SOSs, and 628 indicators.
+Presolve time = 0.04 sec. (52.91 ticks)
+Probing time = 0.01 sec. (3.74 ticks)
+Clique table members: 15480.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.10 sec. (81.90 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0     2651.9051   277                   2651.9051     2110         
+      0     0     2796.8708   383                   Cuts: 222     2575         
+*     0+    0                         4132.2239     2796.8708            32.32%
+      0     0     2815.6007   375     4132.2239     Cuts: 181     2875   31.86%
+      0     0     2820.6890   405     4132.2239     Cuts: 117     3068   31.74%
+*     0+    0                         3844.7048     2820.6890            26.63%
+      0     0     2823.2794   378     3844.7048     Cuts: 142     3260   26.57%
+*     0+    0                         3256.2277     2823.2794            13.30%
+      0     0  -1.00000e+75     0     3256.2277     2823.2794     3260   13.30%
+      0     0     2843.5232   355     3256.2277      Cuts: 94     3489   12.67%
+Detecting symmetries...
+      0     0     2844.8206   287     3256.2277      Cuts: 74     3683   12.63%
+*     0+    0                         3012.8004     2844.8206             5.58%
+      0     0     2846.1958   339     3012.8004      Cuts: 88     3881    5.53%
+      0     0     2846.6663   441     3012.8004      Cuts: 61     3998    5.51%
+*     0+    0                         2962.9047     2846.6663             3.92%
+      0     0  -1.00000e+75     0     2962.9047     2846.6663     3998    3.92%
+Detecting symmetries...
+
+Repeating presolve.
+Tried aggregator 2 times.
+MIP Presolve eliminated 515 rows and 1843 columns.
+MIP Presolve modified 1367 coefficients.
+Aggregator did 606 substitutions.
+Reduced MIP has 3411 rows, 3088 columns, and 30923 nonzeros.
+Reduced MIP has 2406 binaries, 0 generals, 0 SOSs, and 628 indicators.
+Presolve time = 0.06 sec. (71.26 ticks)
+Probing fixed 40 vars, tightened 13 bounds.
+Probing changed sense of 44 constraints.
+Probing time = 0.01 sec. (4.81 ticks)
+Cover probing fixed 0 vars, tightened 146 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 72 rows and 55 columns.
+MIP Presolve modified 272 coefficients.
+Aggregator did 29 substitutions.
+Reduced MIP has 3310 rows, 3004 columns, and 30138 nonzeros.
+Reduced MIP has 2325 binaries, 0 generals, 0 SOSs, and 628 indicators.
+Presolve time = 0.04 sec. (47.95 ticks)
+Probing fixed 0 vars, tightened 6 bounds.
+Probing time = 0.01 sec. (3.97 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 6 rows and 7 columns.
+MIP Presolve modified 15 coefficients.
+Reduced MIP has 3304 rows, 2997 columns, and 30048 nonzeros.
+Reduced MIP has 2318 binaries, 0 generals, 0 SOSs, and 628 indicators.
+Presolve time = 0.03 sec. (34.65 ticks)
+Represolve time = 0.34 sec. (634.15 ticks)
+Probing time = 0.00 sec. (2.71 ticks)
+Clique table members: 10027.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.12 sec. (117.72 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                         2962.9047     2846.6663             3.92%
+      0     0     2846.6941   292     2962.9047     2846.6941     6876    3.92%
+      0     0     2853.7384   294     2962.9047     Cuts: 139     7167    3.68%
+      0     0     2857.2622   233     2962.9047     Cuts: 161     7340    3.57%
+      0     0     2859.8931   242     2962.9047     Cuts: 101     7455    3.48%
+      0     0     2863.1352   247     2962.9047      Cuts: 81     7579    3.37%
+      0     0     2865.6622   253     2962.9047      Cuts: 83     7702    3.28%
+      0     0     2867.0586   265     2962.9047      Cuts: 80     7813    3.23%
+      0     0     2875.6511   239     2962.9047      Cuts: 77     7980    2.94%
+      0     0     2878.3501   277     2962.9047      Cuts: 76     8125    2.85%
+      0     0     2881.5149   275     2962.9047      Cuts: 74     8234    2.75%
+      0     0     2882.5794   253     2962.9047      Cuts: 71     8320    2.71%
+      0     0     2883.0803   263     2962.9047      Cuts: 55     8399    2.69%
+      0     0     2883.3933   259     2962.9047      Cuts: 48     8465    2.68%
+      0     0     2883.5612   253     2962.9047      Cuts: 41     8531    2.68%
+Detecting symmetries...
+      0     2     2883.5612   246     2962.9047     2892.7783     8531    2.37%
+Elapsed time = 20.95 sec. (21896.43 ticks, tree = 0.02 MB, solutions = 5)
+*    69+    7                         2956.7944     2892.7783             2.17%
+*    95+    7                         2906.8986     2892.7783             0.49%
+
+GUB cover cuts applied:  36
+Clique cuts applied:  18
+Cover cuts applied:  19
+Implied bound cuts applied:  4
+Flow cuts applied:  48
+Mixed integer rounding cuts applied:  159
+Zero-half cuts applied:  6
+Lift and project cuts applied:  42
+Gomory fractional cuts applied:  20
+
+Root node processing (before b&c):
+  Real time             =   21.00 sec. (22009.37 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.34 sec. (254.17 ticks)
+  Sync time (average)   =    0.10 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   21.33 sec. (22263.53 ticks)
+>>> 解が見つかりました。Objective: 2906.89863885
+>>> Gap (Approx): 0.485752837%
+Note	String	Fret	Handposition	Finger
+A4	3	14	12	3
+A4	3	14	12	3
+A4	3	14	12	3
+G4	3	12	12	1
+F4	4	15	12	4
+E4	4	14	12	3
+F4	4	15	12	4
+E4	4	14	11	4
+D4	4	12	11	2
+Cs4	4	11	11	1
+As4	3	15	12	4
+Cs4	4	11	11	1
+Gs4	3	13	11	3
+A4	3	14	12	3
+D5	2	15	12	4
+E5	1	12	12	1
+F5	1	13	12	2
+E5	1	12	12	1
+F5	1	13	12	2
+G5	1	15	13	3
+F5	1	13	13	1
+G5	1	15	13	3
+A5	1	17	14	4
+R	0	0	0	x
+C6	1	20	16	4
+C6	1	20	16	4
+R	0	0	0	x
+As5	1	18	15	4
+A5	1	17	14	4
+G5	1	15	12	4
+F5	1	13	12	2
+R	0	0	0	x
+E5	1	12	12	1
+F5	1	13	12	2
+E5	1	12	12	1
+D5	2	15	12	4
+Cs5	2	14	12	3
+C5	2	13	12	2
+A5	1	17	13	4
+C5	2	13	11	3
+As4	2	11	11	1
+G5	1	15	12	4
+As4	2	11	11	1
+A4	2	10	10	1
+F5	1	13	10	4
+E5	1	12	10	3
+D5	1	10	10	1
+C5	2	13	10	4
+R	0	0	0	x
+A4	2	10	10	1
+As4	3	15	13	3
+C5	2	13	13	1
+F5	1	13	13	1
+G5	1	15	13	3
+A5	1	17	13	4
+G5	1	15	13	3
+F5	1	13	12	2
+A4	3	14	12	3
+As4	3	15	12	4
+A4	3	14	12	3
+G4	3	12	12	1
+F4	4	15	12	4
+E4	4	14	12	3
+D4	4	12	11	2
+Cs4	4	11	11	1
+R	0	0	0	x
+A3	5	12	11	2
+D4	4	12	10	3
+C4	4	10	10	1
+D4	4	12	12	1
+F4	4	15	12	4
+F4	4	15	12	4
+F4	4	15	12	4
+F4	4	15	12	4
+G4	3	12	12	1
+G4	3	12	12	1
+G4	3	12	12	1
+G4	3	12	12	1
+A4	3	14	12	3
+A4	3	14	12	3
+C5	2	13	12	2
+C5	2	13	12	2
+D5	2	15	12	4
+D5	2	15	12	4
+E5	1	12	12	1
+E5	1	12	12	1
+F5	1	13	12	2
+F5	1	13	12	2
+F5	1	13	12	2
+F5	1	13	12	2
+G5	1	15	14	2
+G5	1	15	14	2
+G5	1	15	14	2
+G5	1	15	14	2
+A5	1	17	14	4
+C6	1	20	16	4
+Cs5	2	14	14	1
+F5	2	18	16	3
+C6	1	20	16	4
+As5	1	18	14	4
+F5	1	13	13	1
+Cs5	2	14	13	2
+C5	2	13	13	1
+Cs5	2	14	13	2
+C5	2	13	12	2
+As4	2	11	11	1
+Cs5	2	14	11	4
+R	0	0	0	x
+As4	2	11	11	1
+R	0	0	0	x
+A4	2	10	10	1
+
+
+--- Cost Breakdown ---
+  Position Change (PC): 860.400005485
+  String Change   (SC): 1620.02171692
+  Hand Spread     (HS): 36.476916445
+  Difficulty Hold (DH): 390
+  Open String     (NO): 0
+-----------------------------------------
+  Total Cost (Sum)    : 2906.89863885
+-----------------------------------------
+main returns 0
+
+<<< main
+
+
+<<< done
+

@@ -1,0 +1,12 @@
+
+<<< setup
+
+*** ERROR[SCRIPT_002] at 75:0 models/model.mod: Scripting runtime error: Element "abs" does not exist in OPL model..
+*** ERROR[SCRIPT_004] at 71:1-8 models/model.mod: Execution of "anonymous#2" failed: "models/model.mod", line 75: Element "abs" does not exist in OPL model..
+*** ERROR[GENERATE_102] at 165:1-170:104 models/model.mod: Index out of bound for array "fretPosition": 25.
+*** ERROR[GENERATE_103] at 167:5-170:104 models/model.mod: OPL cannot extract expression: forall(h in 2..4) (forall(c in AllCombinations: c.fret >= p) vinc7: c.fret >= p+h+(-1) => (fretPosition[c.fret]+fretPosition[(p+h+(-1))]*(-1))*y[i][p][h][c] <= SP_max_mm[h]).
+*** ERROR[GENERATE_103] at 165:1-170:104 models/model.mod: OPL cannot extract expression: forall(i in 1..11) (forall(p in 1..24) (forall(h in 2..4) (forall(c in AllCombinations: c.fret >= p) vinc7: c.fret >= p+h+(-1) => (fretPosition[c.fret]+fretPosition[(p+h+(-1))]*(-1))*y[i][p][h][c] <= SP_max_mm[h]))).
+*** ERROR[GENERATE_103] at 165:1-170:104 models/model.mod: CPLEX cannot extract expression: forall(i in 1..11) (forall(p in 1..24) (forall(h in 2..4) (forall(c in AllCombinations: c.fret >= p) vinc7: c.fret >= p+h+(-1) => (fretPosition[c.fret]+fretPosition[(p+h+(-1))]*(-1))*y[i][p][h][c] <= SP_max_mm[h]))).
+
+<<< generate
+

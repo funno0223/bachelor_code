@@ -1,0 +1,196 @@
+
+<<< setup
+
+INFO: Calculating Stretch Costs (Additive Hybrid Model v18)...
+INFO: Stretch Cost Table Generated (Additive Hybrid Model v18).
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 96861 rows and 1037795 columns.
+MIP Presolve added 104 rows and 52 columns.
+MIP Presolve modified 15271 coefficients.
+Aggregator did 6 substitutions.
+Reduced MIP has 5607 rows, 7310 columns, and 116221 nonzeros.
+Reduced MIP has 6200 binaries, 0 generals, 0 SOSs, and 612 indicators.
+Presolve time = 1.32 sec. (2618.45 ticks)
+Probing fixed 635 vars, tightened 1993 bounds.
+Probing changed sense of 1218 constraints.
+Probing time = 0.05 sec. (14.54 ticks)
+Cover probing fixed 17 vars, tightened 48 bounds.
+Tried aggregator 2 times.
+MIP Presolve eliminated 626 rows and 1014 columns.
+MIP Presolve modified 653 coefficients.
+Aggregator did 152 substitutions.
+Reduced MIP has 4829 rows, 6144 columns, and 94264 nonzeros.
+Reduced MIP has 5225 binaries, 98 generals, 0 SOSs, and 602 indicators.
+Presolve time = 0.13 sec. (186.99 ticks)
+Probing fixed 7 vars, tightened 558 bounds.
+Probing changed sense of 4 constraints.
+Probing time = 0.04 sec. (21.78 ticks)
+Cover probing fixed 0 vars, tightened 164 bounds.
+Tried aggregator 2 times.
+Detecting symmetries...
+MIP Presolve eliminated 64 rows and 78 columns.
+MIP Presolve modified 666 coefficients.
+Aggregator did 6 substitutions.
+Reduced MIP has 4759 rows, 6060 columns, and 91292 nonzeros.
+Reduced MIP has 5149 binaries, 98 generals, 0 SOSs, and 600 indicators.
+Presolve time = 0.11 sec. (160.82 ticks)
+Classifier predicts products in MIQP should not be linearized.
+Represolve...
+
+Tried aggregator 2 times.
+MIQP Presolve eliminated 96861 rows and 1037795 columns.
+MIQP Presolve modified 15271 coefficients.
+Aggregator did 6 substitutions.
+Repairing indefinite Q in the objective.
+Reduced MIQP has 5503 rows, 7258 columns, and 116013 nonzeros.
+Reduced MIQP has 6148 binaries, 0 generals, 0 SOSs, and 612 indicators.
+Reduced MIQP objective Q matrix has 193 nonzeros.
+Presolve time = 1.31 sec. (2601.24 ticks)
+Probing fixed 610 vars, tightened 2021 bounds.
+Probing changed sense of 1218 constraints.
+Probing time = 0.03 sec. (14.12 ticks)
+Cover probing fixed 18 vars, tightened 52 bounds.
+Tried aggregator 2 times.
+MIQP Presolve eliminated 575 rows and 974 columns.
+MIQP Presolve modified 664 coefficients.
+Aggregator did 7 substitutions.
+Reduced MIQP has 4921 rows, 6277 columns, and 94876 nonzeros.
+Reduced MIQP has 5210 binaries, 98 generals, 0 SOSs, and 602 indicators.
+Reduced MIQP objective Q matrix has 179 nonzeros.
+Presolve time = 0.12 sec. (184.53 ticks)
+Probing fixed 12 vars, tightened 568 bounds.
+Probing changed sense of 4 constraints.
+Probing time = 0.03 sec. (21.78 ticks)
+Cover probing fixed 0 vars, tightened 262 bounds.
+Tried aggregator 2 times.
+MIQP Presolve eliminated 60 rows and 78 columns.
+MIQP Presolve modified 657 coefficients.
+Aggregator did 2 substitutions.
+Reduced MIQP has 4859 rows, 6197 columns, and 92019 nonzeros.
+Reduced MIQP has 5134 binaries, 98 generals, 0 SOSs, and 600 indicators.
+Reduced MIQP objective Q matrix has 158 nonzeros.
+Presolve time = 0.10 sec. (151.80 ticks)
+Probing time = 0.02 sec. (11.44 ticks)
+Cover probing fixed 0 vars, tightened 5 bounds.
+Clique table members: 15883.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.20 sec. (240.89 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      788.6842   504                    788.6842      267         
+      0     0      801.3371   617                   Cuts: 286     1906         
+      0     0      805.2014   713                   Cuts: 202     2961         
+*     0+    0                          993.5259      805.2014            18.96%
+      0     0      806.8786   705      993.5259     Cuts: 133     3808   18.79%
+*     0+    0                          902.6603      806.8786            10.61%
+*     0+    0                          864.1501      806.8786             6.63%
+      0     0  -1.00000e+75     0      864.1501      806.8786     3808    6.63%
+*     0+    0                          863.8416      806.8786             6.59%
+      0     0      807.3192   759      863.8416      Cuts: 82     4400    6.54%
+      0     0      807.8334   799      863.8416      Cuts: 65     5078    6.48%
+      0     0      808.0925   825      863.8416      Cuts: 53     5376    6.45%
+      0     0      808.2738   796      863.8416      Cuts: 26     5698    6.43%
+      0     0      808.3715   767      863.8416      Cuts: 33     5931    6.42%
+      0     0      808.4353   807      863.8416      Cuts: 25     6087    6.41%
+      0     0      808.5027   809      863.8416      Cuts: 13     6208    6.41%
+*     0+    0                          842.2556      808.5027             4.01%
+*     0+    0                          842.0413      808.5027             3.98%
+      0     0  -1.00000e+75     0      842.0413      808.5027     6208    3.98%
+      0     2      808.5027   809      842.0413      808.5027     6208    3.98%
+Elapsed time = 7.53 sec. (10117.08 ticks, tree = 0.02 MB, solutions = 6)
+*    15+    1                          836.8707      808.5148             3.39%
+     19    17      817.0609   681      836.8707      808.5148     8193    3.39%
+*    58+   11                          836.2604      809.6837             3.18%
+     65    44      830.4080   676      836.2604      809.6837    13169    3.18%
+     92    71      821.4173   659      836.2604      809.6837    16938    3.18%
+    151    99      833.0867   553      836.2604      809.6837    21415    3.18%
+    242   136      822.1734   620      836.2604      809.6837    29798    3.18%
+    367   223        cutoff            836.2604      809.6837    43279    3.18%
+    444   291      827.2475    90      836.2604      809.6837    56541    3.18%
+    573   320        cutoff            836.2604      809.6837    63674    3.18%
+    727   385        cutoff            836.2604      809.6837    73224    3.18%
+*   806+  467                          830.0047      809.6837             2.45%
+   1180   478        cutoff            830.0047      811.4089   116002    2.24%
+Elapsed time = 12.91 sec. (13243.26 ticks, tree = 0.84 MB, solutions = 15)
+   1613   792      816.9360   709      830.0047      812.7782   168786    2.08%
+   2090  1116      818.0847   641      830.0047      813.2649   216976    2.02%
+   2558  1474        cutoff            830.0047      813.8983   269506    1.94%
+   3047  1838      824.9569   267      830.0047      814.0368   321806    1.92%
+   3577  2095      823.9713   260      830.0047      814.3223   356292    1.89%
+   3917  2428      818.6297   596      830.0047      814.3908   403377    1.88%
+
+Performing restart 1
+
+Repeating presolve.
+Tried aggregator 2 times.
+MIQP Presolve eliminated 201 rows and 273 columns.
+MIQP Presolve modified 10675 coefficients.
+Aggregator did 115 substitutions.
+Reduced MIQP has 4538 rows, 5809 columns, and 80125 nonzeros.
+Reduced MIQP has 4942 binaries, 97 generals, 0 SOSs, and 600 indicators.
+Reduced MIQP objective Q matrix has 130 nonzeros.
+Presolve time = 0.12 sec. (182.77 ticks)
+Tried aggregator 1 time.
+MIQP Presolve eliminated 16 rows and 12 columns.
+MIQP Presolve modified 416 coefficients.
+Reduced MIQP has 4521 rows, 5797 columns, and 79819 nonzeros.
+Reduced MIQP has 4934 binaries, 97 generals, 0 SOSs, and 596 indicators.
+Reduced MIQP objective Q matrix has 130 nonzeros.
+Presolve time = 0.05 sec. (84.54 ticks)
+Represolve time = 0.44 sec. (679.71 ticks)
+   3918     0      810.3553   775      830.0047     Cuts: 100   431740    1.88%
+   3918     0      810.7194   751      830.0047      Cuts: 58   432236    1.88%
+   3918     0      811.0988   571      830.0047      Cuts: 48   432790    1.88%
+   3918     0      811.3474   558      830.0047      Cuts: 48   433099    1.88%
+   3918     0      811.4851   571      830.0047      Cuts: 39   433504    1.88%
+   3918     0      811.5250   604      830.0047      Cuts: 26   433718    1.88%
+   3918     0      811.5776   592      830.0047      Cuts: 24   434034    1.88%
+   3918     0      811.6111   599      830.0047      Cuts: 25   434195    1.88%
+   3918     0      811.7268   601      830.0047      Cuts: 22   434485    1.88%
+   3918     2      811.7268   601      830.0047      814.3909   434485    1.88%
+   3919     3      811.9992   768      830.0047      814.3909   434584    1.88%
+   3921     4      812.1664   576      830.0047      814.3909   434596    1.88%
+   3923     5      811.9949   784      830.0047      814.3909   434823    1.88%
+Elapsed time = 35.27 sec. (29615.75 ticks, tree = 0.02 MB, solutions = 15)
+   3927     6      812.6766   574      830.0047      814.3909   434684    1.88%
+   3929     8      812.6501   578      830.0047      814.3909   435159    1.88%
+   3940    11      815.2210   494      830.0047      814.3909   436272    1.88%
+   3943    15      816.1015   497      830.0047      814.3909   436392    1.88%
+   3953    23      812.8189   527      830.0047      814.3909   438334    1.88%
+   3958    27      815.4301   441      830.0047      814.3909   439516    1.88%
+   3966    35      816.4076   537      830.0047      814.3909   440535    1.88%
+   3972    36      815.3765   726      830.0047      814.3909   440802    1.88%
+   3978    40      813.4341   528      830.0047      814.3909   441570    1.88%
+   3985    37      815.5598   527      830.0047      814.3909   440845    1.88%
+Elapsed time = 55.45 sec. (39941.49 ticks, tree = 0.05 MB, solutions = 15)
+   3991    51      817.2225   355      830.0047      814.3909   442486    1.88%
+   3998    59      815.6634   537      830.0047      814.3909   443986    1.88%
+   4005    69      822.6858   312      830.0047      814.3909   447927    1.88%
+   4011    71      815.8384   509      830.0047      814.3909   448676    1.88%
+   4019    72      822.2100   417      830.0047      814.3909   449737    1.88%
+   4026    75      818.7800   340      830.0047      814.3909   450757    1.88%
+   4031    84      813.7385   491      830.0047      814.3909   454038    1.88%
+   4042    90      813.3918   423      830.0047      814.3909   454631    1.88%
+   4052    96      821.6030   375      830.0047      814.3909   456083    1.88%
+   4057   101      818.4594   427      830.0047      814.3909   457701    1.88%
+Elapsed time = 76.94 sec. (50468.33 ticks, tree = 0.13 MB, solutions = 15)
+   4067   109      824.3337   410      830.0047      814.3909   459973    1.88%
+   4076   107      821.7644   337      830.0047      814.3909   460321    1.88%
+   4081   106      819.5366   364      830.0047      814.3909   459247    1.88%
+   4092   111      818.4017   432      830.0047      814.3909   460769    1.88%
+   4099   136        cutoff            830.0047      814.3909   470366    1.88%
+   4107   123      819.8074   412      830.0047      814.3909   464172    1.88%
+   4118   137      822.2221   467      830.0047      814.3909   469281    1.88%
+   4124   137      818.9911   710      830.0047      814.3909   470906    1.88%
+   4131   153      822.8339   356      830.0047      814.3909   476620    1.88%
+   4138   160      823.1961   421      830.0047      814.3909   479616    1.88%
+Elapsed time = 99.08 sec. (61356.83 ticks, tree = 0.22 MB, solutions = 15)
+   4148   166      823.5567   371      830.0047      814.3909   481878    1.88%
+   4159   159      824.5615   460      830.0047      814.3909   478634    1.88%
