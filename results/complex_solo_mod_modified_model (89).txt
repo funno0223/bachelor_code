@@ -1,0 +1,17 @@
+
+<<< setup
+
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+*** ERROR[SCRIPT_002] at 192:0 models/modified_model.mod: Scripting runtime error: Element "thresh" does not exist in OPL model..
+*** ERROR[SCRIPT_004] at 91:1-8 models/modified_model.mod: Execution of "anonymous#2" failed: "models/modified_model.mod", line 192: Element "thresh" does not exist in OPL model..
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+INFO: Time Penalty Factors Pre-calculated.
+*** ERROR[INTERFACE_003] at 477:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

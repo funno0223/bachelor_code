@@ -10,7 +10,7 @@
 //--------------------------instrument (Auto Generated / Integer)
 f_max = 22;
 s_max = 6;
-p_max = 17; // HandPosition Max
+p_max = 17;
 
 PlayableSounds = {0,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88};
 OpenStrings = [{},{6},{},{},{},{},{5},{},{},{},{},{4},{},{},{},{},{3},{},{},{},{2},{},{},{},{},{1},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}];
@@ -29,30 +29,28 @@ availableTime = [189,190,95,95,95,190,46,47,94,190,95,95,95,95,95,94,189,94,95,1
 
 scaleLength = 635.0;
 stringSpacing = 10.8;
+SP_max_mm = [60.0,80.0,100.0];
 natural_min_spread_mm = [20, 40, 60];
 timePerMm = 0.25;
 
 fingerLengths_mm = [70.0, 75.0, 70.0, 50.0];
-fingerDifficulty = [1.0, 1.2, 1.8, 2.0]; 
+fingerDifficulty = [1.0, 1.2, 1.4, 1.5]; 
 
-HS_BaseMatrix = [
- [1.0, 1.0, 1.2, 1.3], // Index からの遷移 (比較的自由)
- [1.0, 1.0, 1.5, 1.2], // Middle から (Ringへの遷移はきつい)
- [1.2, 1.5, 1.0, 1.4], // Ring から (Middle, Pinkyへの遷移は腱間結合によりきつい)
- [1.3, 1.2, 1.4, 1.0]  // Pinky から (Ringへの遷移はきつい)
-];
-
-slide_factor = 0.5;  // スライドは楽なのでコスト半減
-joint_factor = 0.3;  // ジョイントはさらに楽なのでコスト大幅減
+timeThresholdRatio = 1.5;
+highPositionPenalty = 2.0; 
 
 d_PC = 0.8;
-d_HS = 1.0;
-d_ST = 1.2;
+d_SC = 1.0;
+d_SL = 2.0;
+d_MC = 0.2;
+d_ST = 1.5;
 d_DH = 0.7;  
 d_NO = 10.0;
 
 alpha_PC = 0.2;
-alpha_HS = 0.2;
+alpha_SC = 0.2;
+alpha_SL = 0.2;
+alpha_MC = 0.2;
 alpha_ST = 0.2;
 alpha_DH = 0.2;
 alpha_NO = 0.2;

@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 358:46-49 models/modified_model.mod: Name "SLC" does not exist.
+### OPL exception: Impossible to load model.

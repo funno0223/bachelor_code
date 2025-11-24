@@ -1,0 +1,6 @@
+
+<<< setup
+
+*** ERROR[GENERATE_010] at 378:25-26 models/modified_model.mod: Decision variable (or expression) "o" not allowed.
+*** ERROR[GENERATE_010] at 386:25-26 models/modified_model.mod: Decision variable (or expression) "o" not allowed.
+### OPL exception: Impossible to load model.
