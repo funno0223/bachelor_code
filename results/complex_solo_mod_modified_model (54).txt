@@ -1,0 +1,20 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 62:1-25 models/modified_model.mod: External data element "jump_factor" was not defined.
+*** ERROR[GENERATE_217] at 61:1-26 models/modified_model.mod: External data element "slide_factor" was not defined.
+*** ERROR[GENERATE_217] at 60:1-45 models/modified_model.mod: External data element "HS_BaseMatrix" was not defined.
+INFO: Pre-calculating HS Transition Matrix...
+*** ERROR[GENERATE_202] at 115:0 models/modified_model.mod: Data element "slide_factor" not defined.
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+INFO: Separated Cost Tables Generated.
+INFO: Time Logic Initialized.
+INFO: Time Penalty Factors Pre-calculated.
+*** ERROR[INTERFACE_003] at 524:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

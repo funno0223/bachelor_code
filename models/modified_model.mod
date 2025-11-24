@@ -2,7 +2,7 @@
  * OPL 22.1.1.0 Model
  * Author: funno
  * Modified: Unified Logic & Slant Model (Updated v19)
- * Final Fix: Angle Tolerance in Sweet Spot
+ * Final Fix: Milder Time Penalty (Ref=60ms)
  *********************************************/
 
 using CPLEX;
@@ -89,7 +89,9 @@ execute {
   }
 }
 
+// ============================================================================
 // B & C ストレッチ(Stretch) と 物理負荷(Physics) の独立計算
+// ============================================================================
 execute {
   var PI = 3.141592653589793;
   var knuckleDist = new Array();
@@ -102,10 +104,19 @@ execute {
   limitRatios[1] = 1.0; limitRatios[2] = 1.05; limitRatios[3] = 1.05;
   limitRatios[4] = 1.2; 
   
+  // 有効指長係数 (Index:0.9, Middle:0.9, Ring:0.8, Pinky:1.0)
   var baseFactors = new Array();
   baseFactors[1] = 0.9;
   baseFactors[2] = 0.9; baseFactors[3] = 0.8; baseFactors[4] = 1.0;
 
+  // 指ごとの距離コスト発生閾値 (Ringだけ厳しく)
+  var distThresholds = new Array();
+  distThresholds[1] = 0.6;
+  distThresholds[2] = 0.6;
+  distThresholds[3] = 0.45; 
+  distThresholds[4] = 0.6;
+
+  // 物理モデル用定数
   var stringTension = new Array();
   stringTension[1] = 1.0;
   stringTension[2] = 1.0; stringTension[3] = 1.0;
@@ -121,14 +132,19 @@ execute {
     for(var h in Fingers) { 
       for(var c in AllCombinations) {
         
+        // --- 初期化 ---
         Stretch_CostTable[p][h][c] = 0.0;
         Physics_CostTable[p][h][c] = 0.0;
 
+        // 0. 論理的制約
         if (c.fret < p) {
              Stretch_CostTable[p][h][c] = 100000.0;
              continue; 
         }
 
+        // =================================================
+        // 特徴量1: 幾何学コスト (Stretch)
+        // =================================================
         var targetString = c.corda;
         var maxRotation = 40.0;
         var baseTheta = maxRotation * (targetString - 6.0) / 5.0;
@@ -150,6 +166,7 @@ execute {
         var nX = -Math.sin(thetaRad);
         var nY = Math.cos(thetaRad);
 
+        // 有効長と限界判定
         var neckFactor = 1.0;
         if (c.fret >= 15) {
             var ratioHigh = (c.fret - 15.0) / (f_max - 15.0);
@@ -162,8 +179,16 @@ execute {
              continue;
         }
 
+        // --- 距離コスト計算 (修正版: Ring Finger Slope) ---
         var distCost = 0.0;
-        var ratio = 0.0; // 距離比率を保持
+        var ratio = 0.0;
+        var thresh = distThresholds[h]; // 指ごとの閾値
+
+        // 薬指(h==3)だけ係数をきつくする (10.0 -> 25.0)
+        var distSlope = 10.0;
+        if (h == 3) {
+            distSlope = 25.0;
+        }
 
         if (effLen > 0) {
             ratio = dist / effLen;
@@ -171,17 +196,20 @@ execute {
             if (ratio < 0.3) {
                 distCost = (0.3 - ratio) * 5.0;
             } 
-            else if (ratio <= 0.6) {
+            else if (ratio <= thresh) { // スイートスポット
                 distCost = 0.0;
             } 
             else {
-                distCost = (ratio - 0.6) * 10.0;
+                // ここで distSlope を使用
+                distCost = (ratio - thresh) * distSlope;
+                
                 if (ratio > 1.0) {
                     distCost += (ratio - 1.0) * 20.0;
                 }
             }
         }
 
+        // --- 角度コスト計算 ---
         var angleCost = 0.0;
         var dotProd = vX * nX + vY * nY;
         var cosDelta = (dist > 0.001) ? (dotProd / dist) : 1.0;
@@ -195,18 +223,24 @@ execute {
         var maxAngle = baseMaxAngle;
         if (c.fret >= 12) maxAngle = Math.max(10.0, baseMaxAngle - (c.fret - 12) * 0.5);
         
-        // --- 修正: スイートスポット(ratio 0.3-0.6)では角度ペナルティを軽減 ---
-        var angleMultiplier = 0.5; // デフォルト倍率
-        if (effLen > 0 && ratio >= 0.3 && ratio <= 0.6) {
-             angleMultiplier = 0.2; // 寛容モード (0.5 -> 0.2)
+        // スイートスポット(閾値以下)でのみ緩和
+        var angleMultiplier = 0.5; 
+        if (effLen > 0 && ratio >= 0.3 && ratio <= thresh) { 
+             angleMultiplier = 0.2; 
         }
         
         if (deltaDeg > maxAngle) {
             angleCost = (deltaDeg - maxAngle) * angleMultiplier;
         }
 
-        Stretch_CostTable[p][h][c] = distCost + angleCost;
+        // --- STコスト格納 (難易度係数を乗算) ---
+        var diff = fingerDifficulty[h];
+        Stretch_CostTable[p][h][c] = (distCost + angleCost) * diff;
 
+        // =================================================
+        // 特徴量2: 物理アクションコスト (Physics)
+        // =================================================
+        
         var a_mm = 0.5 + (2.0 * c.fret / 12.0);
         var l_mm = scaleLength - fretPosition[c.fret];
         var tau = stringTension[targetString];
@@ -216,9 +250,9 @@ execute {
              forceIndex = (2.0 * tau * a_mm) / (l_mm * tanTheta);
         }
 
-        var diff = fingerDifficulty[h];
+        // Physicsコスト格納 (係数 100.0)
         Physics_CostTable[p][h][c] = (forceIndex * 100.0) * diff;
-    }
+      }
     }
   }
   writeln("INFO: Separated Cost Tables Generated.");
@@ -271,7 +305,7 @@ execute {
   // 2. フラグ設定と時間係数の事前計算 (Pre-calculation)
   
   var tp_base = 0.15;   
-  var tp_ref = 80.0;    
+  var tp_ref = 60.0;    // <--- 緩和: 80.0 -> 60.0
   var tp_exp = 1.5;     
   
   for (var j = 1; j <= m; j++) {
@@ -320,8 +354,6 @@ dexpr float SC[i in NotesButFirst] =
       sum(s in Strings : s in OpenStrings[note[i]]) s * o[i][s])
   );
 
-dexpr float JointSavings[i in NotesButFirst] = 0.0;
-
 dexpr float ST[i in Notes] = 
   (note[i] == RestNote) ?
   0.0 : 
@@ -340,7 +372,6 @@ dexpr float DH[i in Notes] =
 
 dexpr float tot_PC = sum(i in NotesButFirst) PC[i] * timePenaltyFactor[i];
 dexpr float tot_SC = sum(i in NotesButFirst) SC[i] * timePenaltyFactor[i];
-dexpr float tot_JointSavings = sum(i in NotesButFirst) JointSavings[i] * timePenaltyFactor[i];
 dexpr float tot_ST = sum(i in Notes) ST[i];
 dexpr float tot_DH = sum(i in Notes) DH[i];
 dexpr float tot_NO = sum(i in Notes) sum(s in Strings : s in OpenStrings[note[i]]) o[i][s];
@@ -449,16 +480,27 @@ subject to {
 }
 
 // ============================================================================
-// 5. 出力設定
+// 5. 出力設定 (ソルバー設定の調整付き)
 // ============================================================================
 main {
+  // --- パフォーマンスチューニング設定 ---
+  cplex.epgap = 0.01;  // 相対ギャップ許容値 0.5%
+  cplex.tilim = 600;
+
   thisOplModel.generate();
   if (cplex.solve()) {
     var obj = cplex.getObjValue();
-    writeln(">>> 解が見つかりました。Objective: ", obj);
+    var bestObj = cplex.getBestObjValue();
+    var gap = Math.abs(obj - bestObj) / (1e-10 + Math.abs(obj));
+    
+    writeln(">>> 解が見つかりました。");
+    writeln("    Objective (Total Cost): ", obj);
+    writeln("    Best Bound            : ", bestObj);
+    writeln("    Relative Gap          : ", gap * 100, "%");
+    
     thisOplModel.postProcess();
   } else {
-    writeln(">>> 解が見つかりませんでした。");
+    writeln(">>> 解が見つかりませんでした（または時間切れで解なし）。");
   }
 }
 
@@ -491,7 +533,7 @@ execute {
   writeln("\n--- Cost Breakdown ---");
   
   var costPC = alpha_PC * d_PC * tot_PC;
-  var costSC = alpha_SC * d_SC * (tot_SC - tot_JointSavings);
+  var costSC = alpha_SC * d_SC * tot_SC;
   var costST = alpha_ST * d_ST * tot_ST;
   var costDH = alpha_DH * d_DH * tot_DH;
   var costNO = alpha_NO * d_NO * tot_NO;

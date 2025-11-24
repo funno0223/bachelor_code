@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_006] at 408:3-412:27 models/modified_model.mod: Name "alpha_SC" does not exist.
+### OPL exception: Impossible to load model.

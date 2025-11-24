@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 32:10-11 datas/complex_solo_mod.dat: Element "SP_max_mm" not defined.
+### OPL exception: Processing failed.

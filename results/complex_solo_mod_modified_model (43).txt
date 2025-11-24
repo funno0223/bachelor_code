@@ -1,0 +1,40 @@
+
+<<< setup
+
+*** ERROR at 176:0 models/modified_model.mod: Scripting parser error: illegal character '#'.
+*** ERROR at 181:8 models/modified_model.mod: Scripting parser error: illegal character '#'.
+*** ERROR at 181:10 models/modified_model.mod: Scripting parser error: illegal character 0xe8.
+*** ERROR at 181:11 models/modified_model.mod: Scripting parser error: illegal character 0x96.
+*** ERROR at 181:12 models/modified_model.mod: Scripting parser error: illegal character 0xac.
+*** ERROR at 181:13 models/modified_model.mod: Scripting parser error: illegal character 0xe6.
+*** ERROR at 181:14 models/modified_model.mod: Scripting parser error: illegal character 0x8c.
+*** ERROR at 181:15 models/modified_model.mod: Scripting parser error: illegal character 0x87.
+*** ERROR at 181:19 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:20 models/modified_model.mod: Scripting parser error: illegal character 0x81.
+*** ERROR at 181:21 models/modified_model.mod: Scripting parser error: illegal character 0xaf.
+*** ERROR at 181:22 models/modified_model.mod: Scripting parser error: illegal character 0xe5.
+*** ERROR at 181:23 models/modified_model.mod: Scripting parser error: illegal character 0x82.
+*** ERROR at 181:24 models/modified_model.mod: Scripting parser error: illegal character 0xbe.
+*** ERROR at 181:25 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:26 models/modified_model.mod: Scripting parser error: illegal character 0x81.
+*** ERROR at 181:27 models/modified_model.mod: Scripting parser error: illegal character 0x8d.
+*** ERROR at 181:28 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:29 models/modified_model.mod: Scripting parser error: illegal character 0x82.
+*** ERROR at 181:30 models/modified_model.mod: Scripting parser error: illegal character 0x92.
+*** ERROR at 181:31 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:32 models/modified_model.mod: Scripting parser error: illegal character 0x81.
+*** ERROR at 181:33 models/modified_model.mod: Scripting parser error: illegal character 0x8d.
+*** ERROR at 181:34 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:35 models/modified_model.mod: Scripting parser error: illegal character 0x81.
+*** ERROR at 181:36 models/modified_model.mod: Scripting parser error: illegal character 0xa4.
+*** ERROR at 181:37 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:38 models/modified_model.mod: Scripting parser error: illegal character 0x81.
+*** ERROR at 181:39 models/modified_model.mod: Scripting parser error: illegal character 0x8f.
+*** ERROR at 181:40 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:41 models/modified_model.mod: Scripting parser error: illegal character 0x81.
+*** ERROR at 181:42 models/modified_model.mod: Scripting parser error: illegal character 0x99.
+*** ERROR at 181:43 models/modified_model.mod: Scripting parser error: illegal character 0xe3.
+*** ERROR at 181:44 models/modified_model.mod: Scripting parser error: illegal character 0x82.
+*** ERROR at 181:45 models/modified_model.mod: Scripting parser error: illegal character 0x8b.
+*** ERROR at 189:16 models/modified_model.mod: Scripting parser error: illegal character '#'.
+### OPL exception: Impossible to load model.

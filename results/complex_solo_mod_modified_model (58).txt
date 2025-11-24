@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 47:13-14 datas/complex_solo_mod.dat: Element "joint_factor" not defined.
+### OPL exception: Processing failed.

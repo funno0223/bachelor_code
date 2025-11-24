@@ -1,0 +1,14 @@
+
+<<< setup
+
+INFO: Calculating ST/DH Tables...
+*** ERROR[SCRIPT_002] at 195:0 models/modified_model.mod: Scripting runtime error: Index out of bound for array "timePenaltyFactor", "1".
+*** ERROR[SCRIPT_004] at 168:1-8 models/modified_model.mod: Execution of "anonymous#2" failed: "models/modified_model.mod", line 195: Index out of bound for array "timePenaltyFactor": 1.
+*** ERROR[INTERFACE_003] at 362:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

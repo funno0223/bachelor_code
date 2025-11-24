@@ -1,0 +1,12 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 79:1-18 models/modified_model.mod: External data element "d_SC" was not defined.
+*** ERROR[GENERATE_217] at 86:1-22 models/modified_model.mod: External data element "alpha_SC" was not defined.
+INFO: Calculating Separated Costs (Stretch vs Physics)...
+INFO: Separated Cost Tables Generated.
+INFO: Time Logic Initialized.
+  - Relax Threshold: 171.303431187 ms
+INFO: Time Penalty Factors Pre-calculated.
+*** ERROR[GENERATE_202]: Data element "alpha_SC" not defined.
+### OPL exception: No main in model.
