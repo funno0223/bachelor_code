@@ -1,10 +1,9 @@
 /*********************************************
  * OPL Model for Guitar Tablature Generation
- * Modified: Added MC (Movement Cost) with Refactored Logic
+ * Modified: Added AC (Angle Change) with Refactored Logic
  *********************************************/
 
 using CPLEX;
-
 // ============================================================================
 // 1. データ定義 & パラメータ
 // ============================================================================
@@ -45,18 +44,14 @@ range HandPosition = 1..p_max;
 float scaleLength = ...;
 float fretPosition[Frets];
 float stringSpacing = ...;
-float SP_max_mm[FingersButFirst] = ...;
 float timePerMm = ...;
 float fingerLengths_mm[Fingers] = ...;
 float fingerDifficulty[Fingers] = ...;
-float timeThresholdRatio = ...;
-float highPositionPenalty = ...;
 float natural_min_spread_mm[FingersButFirst] = ...;
 // 計算テーブル
 float Stretch_CostTable[p in HandPosition][h in Fingers][c in AllCombinations];
 float Physics_CostTable[p in HandPosition][h in Fingers][c in AllCombinations];
 float BestWristAngleTable[p in HandPosition][h in Fingers][c in AllCombinations];
-
 float rad_to_deg = 180.0 / 3.141592653589793;
 float deg_to_rad = 3.141592653589793 / 180.0;
 
@@ -66,14 +61,14 @@ float d_SC = ...;
 float d_ST = ...;
 float d_DH = ...;
 float d_NO = ...;
-float d_MC = ...;
+float d_AC = ...;
 
 float alpha_PC = ...;
 float alpha_SC = ...;
 float alpha_ST = ...;
 float alpha_DH = ...;
 float alpha_NO = ...;
-float alpha_MC = ...;
+float alpha_AC = ...;
 
 // ============================================================================
 // 2. 前処理 (Execute Blocks)
@@ -92,17 +87,14 @@ execute {
 // ============================================================================
 execute {
   var PI = 3.141592653589793;
-  
   // --- 1. ローカルパラメータ設定 ---
   
-  // 指の付け根の距離 (Knuckle Distances)
-  // Index(1)=0, Middle(2)=20, Ring(3)=40, Pinky(4)=55
   var knuckleDist = new Array();
   knuckleDist[1] = 0.0;  
-  knuckleDist[2] = 20.0;
-  knuckleDist[3] = 40.0;
-  knuckleDist[4] = 55.0; 
-  
+  for (var f in FingersButFirst) {
+     knuckleDist[f] = natural_min_spread_mm[f];
+  }
+
   // Limit Ratios (最大伸長倍率)
   // Index=1.3, Middle/Ring=1.05, Pinky=1.1
   var limitRatios = new Array();
@@ -112,7 +104,6 @@ execute {
   // Index=0.7, Middle=0.9, Ring=0.85, Pinky=1.0
   var baseFactors = new Array();
   baseFactors[1] = 0.7; baseFactors[2] = 0.9; baseFactors[3] = 0.85; baseFactors[4] = 1.0;
-
   // String Tension (Physics用)
   var stringTension = new Array();
   stringTension[1] = 1.0; stringTension[2] = 1.0; stringTension[3] = 1.0;
@@ -127,7 +118,6 @@ execute {
   var dist_max = scaleLength - (scaleLength / Math.pow(2, f_max/12.0)); 
 
   writeln("INFO: Calculating v17 Stretch Costs & Recording Wrist Angles...");
-
   for(var p in HandPosition) {
     // 基準点(Pivot)は人差し指付け根、1弦(Y=0)固定
     var pivotX = fretPosition[p];
@@ -139,7 +129,7 @@ execute {
         // 初期化
         Stretch_CostTable[p][h][c] = 100000.0;
         Physics_CostTable[p][h][c] = 0.0;
-        BestWristAngleTable[p][h][c] = 0.0; // MC計算用初期化
+        BestWristAngleTable[p][h][c] = 0.0; // AC計算用初期化
 
         // 論理的制約: 目標フレットがハンドポジションより低い場合は不可
         if (c.fret < p) continue; 
@@ -152,14 +142,11 @@ execute {
         var l_mm = scaleLength - fretPosition[c.fret]; // 振動弦長
         var tau = stringTension[targetString];
         var forceIndex = 0.0;
-        
         if (l_mm > 0.001) {
              forceIndex = (2.0 * tau * a_mm) / (l_mm * tanTheta);
         }
         var diff = fingerDifficulty[h];
         Physics_CostTable[p][h][c] = (forceIndex * 100.0) * diff;
-
-
         // -------------------------------------------------------
         // 2. 幾何学的ストレッチ (Stretch Cost) - 角度探索
         // -------------------------------------------------------
@@ -170,12 +157,10 @@ execute {
         // 手首角度探索: -90度(外側/垂直) から 0度(平行) まで
         for (var ang = -90; ang <= 0; ang += 2) {
             var thetaRad = ang * deg_to_rad;
-            
             // 指の付け根(Knuckle)座標計算
             var d = knuckleDist[h];
             var kX = pivotX + (d * Math.cos(thetaRad));
             var kY = pivotY + (d * Math.sin(thetaRad));
-
             // 目標位置(Target)座標
             var tX = fretPosition[c.fret];
             var tY = (c.corda - 1) * stringSpacing;
@@ -184,11 +169,9 @@ execute {
             var vX = tX - kX;
             var vY = tY - kY;
             var dist = Math.sqrt(vX*vX + vY*vY);
-
             // --- Neck Factor (Piecewise at 12F) ---
             var dist_current = scaleLength - fretPosition[c.fret]; // ナットからの距離
             var neckFactor = 1.0;
-            
             var reduction_at_break = 0.015; // 12Fで1.5%減
             var reduction_at_max = 0.15;    // 24Fで15%減
 
@@ -207,10 +190,8 @@ execute {
 
             // 有効指長 (Effective Length)
             var effLen = fingerLengths_mm[h] * baseFactors[h] * neckFactor;
-
             // 距離のハードリミット判定
             if (effLen > 0 && dist > effLen * limitRatios[h]) continue;
-
             // --- 角度計算 (Angle Calculation) ---
             var nX = -Math.sin(thetaRad);
             var nY = Math.cos(thetaRad);
@@ -220,13 +201,11 @@ execute {
             if (cosDelta > 1.0) cosDelta = 1.0;
             if (cosDelta < -1.0) cosDelta = -1.0;
             var deltaAbsDeg = Math.acos(cosDelta) * rad_to_deg;
-
             // 方向判定 (Cross Product: nX*vY - nY*vX)
             // 正: 低フレット側(Inner), 負: 高フレット側(Outer)
             var crossProd = nX * vY - nY * vX;
             var isLowFretSide = (crossProd > 0) ? 1 : 0;
             var deltaSignedDeg = (isLowFretSide == 1) ? deltaAbsDeg : -deltaAbsDeg;
-
             // --- 角度ハードリミット (Hard Limits) ---
             var limitAngle = 0.0;
             var relaxAdd = 0.0;
@@ -241,7 +220,6 @@ execute {
             
             // 小指の緩和 (+5.0)
             if (h == 4) limitAngle += 5.0; 
-
             // 近距離緩和判定 (ratio < 0.5)
             var ratio = 0.0;
             var isCloseDist = 0;
@@ -255,7 +233,6 @@ execute {
 
             // 角度ハードリミットチェック
             if (deltaAbsDeg > limitAngle) continue;
-
             // --- コスト計算: 距離 (Distance Cost) ---
             var distCost = 0.0;
             var distSlope = 10.0;
@@ -278,7 +255,6 @@ execute {
             var comfortAngle = 5.0;
             // 小指も標準の5度
             if (h == 4) comfortAngle = 5.0;
-
             var angleCost = 0.0;
             var coeffPositive = 1.5; // Inner penalty x1.5
             var coeffNegative = 1.0; // Outer penalty x1.0
@@ -291,10 +267,8 @@ execute {
             
             // 近距離なら角度コスト半減
             if (isCloseDist == 1) angleCost *= 0.5;
-
             // --- 総コスト (Difficulty乗算なし) ---
             var currentCost = distCost + angleCost;
-
             // 最小コストの更新
             if (currentCost < minStCost) {
                 minStCost = currentCost;
@@ -306,7 +280,7 @@ execute {
         // 結果の格納
         if (foundValidAngle == 1) {
             Stretch_CostTable[p][h][c] = minStCost;
-            BestWristAngleTable[p][h][c] = bestAngle; // MC計算用に角度を保存
+            BestWristAngleTable[p][h][c] = bestAngle; // AC計算用に角度を保存
         }
 
       } // end combinations
@@ -321,7 +295,6 @@ float accumulatedTime[Notes];
 float timePenaltyFactor[NotesButFirst];
 int isFast[Notes];   
 int isLegato[Notes]; 
-
 execute {
   for (var i = 2; i <= m; i++) {
     if (note[i] != RestNote) {
@@ -419,8 +392,8 @@ dexpr float CurrentWristAngle[i in Notes] =
     // + 開放弦なら0度なので加算なし
   );
 
-// ★MCの再定義: 前後の手首角度の変化量 (絶対値)
-dexpr float MC[i in NotesButFirst] = 
+// AC: 前後の手首角度の変化量 (絶対値)
+dexpr float AC[i in NotesButFirst] = 
   (note[i] == RestNote || prevNoteIndex[i] == i) ?
   0.0 :
   abs(CurrentWristAngle[i] - CurrentWristAngle[prevNoteIndex[i]]);
@@ -432,7 +405,7 @@ dexpr float tot_SC = sum(i in NotesButFirst) SC[i] * timePenaltyFactor[i];
 dexpr float tot_ST = sum(i in Notes) ST[i];
 dexpr float tot_DH = sum(i in Notes) DH[i];
 dexpr float tot_NO = sum(i in Notes) sum(s in Strings : s in OpenStrings[note[i]]) o[i][s];
-dexpr float tot_MC = sum(i in NotesButFirst) MC[i] * timePenaltyFactor[i];
+dexpr float tot_AC = sum(i in NotesButFirst) AC[i] * timePenaltyFactor[i];
 
 minimize
   alpha_PC * d_PC * tot_PC +
@@ -440,7 +413,7 @@ minimize
   alpha_ST * d_ST * tot_ST + 
   alpha_DH * d_DH * tot_DH +
   alpha_NO * d_NO * tot_NO +
-  alpha_MC * d_MC * tot_MC;  // SLの項を削除
+  alpha_AC * d_AC * tot_AC;  // SLの項を削除
 
 // ============================================================================
 // 4. 制約条件 (Constraints)
@@ -500,10 +473,12 @@ subject to {
         forall(h in Fingers) {
           forall(c in Combinations[note[i]]) {
              y[i][p][h][c] + 
+       
                sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
                    (
                      (h == h_prev && 
                         !((c.corda == c_prev.corda) || 
+          
                           (h != 4 && h != 3  && c.fret == c_prev.fret && abs(c.corda - c_prev.corda) == 1))
                      )
                      ||
@@ -517,9 +492,11 @@ subject to {
                         (
                            // パターン1: 小指側へ行くのに、フレットが2つ以上下がる (例: 人差5F -> 薬3F)
                            (h > h_prev && c.fret < c_prev.fret - 2) 
+  
                            ||
                            // パターン2: 人差し指側へ行くのに、フレットが2つ以上上がる (例: 薬3F -> 人差5F)
                            (h < h_prev && c.fret > c_prev.fret + 2)
+     
                         )
                      )
                    )
@@ -531,13 +508,14 @@ subject to {
   }
 
 // -----------------------------------------------------------
-  // 2. ★修正: レガート時の制約 (距離制限 + スライド禁止)
+  // 2. レガート時の制約 (距離制限 + スライド禁止)
   // -----------------------------------------------------------
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isLegato[i] == 1) {
       forall(p in HandPosition) {
         forall(h in Fingers) {
           forall(c in Combinations[note[i]]) {
              y[i][p][h][c] + 
+       
                sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
                    (
                       // 条件A: 距離が遠すぎる (8フレット超)
@@ -555,7 +533,7 @@ subject to {
   }
 
   // -----------------------------------------------------------
-  // 3. ★追加: 速弾き時の距離制約
+  // 3. 速弾き時の距離制約
   // 速弾き(isFast)なら、12フレット(または12ポジション)以上の大跳躍を禁止
   // -----------------------------------------------------------
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFast[i] == 1) {
@@ -563,6 +541,7 @@ subject to {
         forall(h in Fingers) {
           forall(c in Combinations[note[i]]) {
              y[i][p][h][c] + 
+     
                sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
                    (
                       abs(c.fret - c_prev.fret) > 12 ||  // フレット距離が12超
@@ -576,7 +555,7 @@ subject to {
   }
 
   // -----------------------------------------------------------
-  // 4. 速弾き・レガート時の特殊遷移制約 (既存)
+  // 4. 速弾き・レガート時の特殊遷移制約
   // 特定の弦移動パターンなどを禁止
   // -----------------------------------------------------------
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFast[i] == 1) {
@@ -588,6 +567,7 @@ subject to {
                  (
                    (c.fret > c_prev.fret && h < h_prev && c.corda != c_prev.corda) ||
                    (c.fret < c_prev.fret && h > h_prev && c.corda != c_prev.corda)
+               
                    ||
                    (isLegato[i] == 1 && !(c.corda == c_prev.corda || p == p_prev))
                  )
@@ -604,6 +584,9 @@ subject to {
 // ============================================================================
 main {
   cplex.epgap = 0.01;
+  cplex.tilim = 600; // 必要に応じてタイムリミットを設定
+  cplex.mipemphasis = 1;
+
   thisOplModel.generate();
   if (cplex.solve()) {
     var obj = cplex.getObjValue();
@@ -653,17 +636,15 @@ writeln("\n--- Cost Breakdown ---");
   var costST = alpha_ST * d_ST * tot_ST;
   var costDH = alpha_DH * d_DH * tot_DH;
   var costNO = alpha_NO * d_NO * tot_NO;
-  var costMC = alpha_MC * d_MC * tot_MC;
-  // var costSL = ... (削除)
+  var costAC = alpha_AC * d_AC * tot_AC;
 
   writeln("  Position Change (PC): ", costPC);
-  writeln("  Finger Move     (MC): ", costMC);
+  writeln("  Finger Move     (AC): ", costAC);
   writeln("  String Change   (SC): ", costSC);
   writeln("  Geo Stretch     (ST): ", costST);
   writeln("  Phys Action     (DH): ", costDH);
   writeln("  Open String     (NO): ", costNO);
-  // writeln("  Slide Distance  (SL): ", costSL); (削除)
   writeln("-----------------------------------------");
-  writeln("  Total Cost (Sum)    : ", costPC + costSC + costST + costDH + costNO + costMC);
+  writeln("  Total Cost (Sum)    : ", costPC + costSC + costST + costDH + costNO + costAC);
   writeln("-----------------------------------------");
 }
