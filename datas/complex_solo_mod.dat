@@ -30,7 +30,7 @@ availableTime = [189,190,95,95,95,190,46,47,94,190,95,95,95,95,95,94,189,94,95,1
 scaleLength = 635.0;
 stringSpacing = 10.8;
 SP_max_mm = [60.0,80.0,100.0];
-natural_min_spread_mm = [20, 40, 60];
+natural_min_spread_mm = [20, 40, 55];
 timePerMm = 0.25;
 
 fingerLengths_mm = [70.0, 75.0, 70.0, 50.0];
@@ -41,7 +41,6 @@ highPositionPenalty = 2.0;
 
 d_PC = 0.8;
 d_SC = 1.0;
-d_SL = 2.0;
 d_MC = 0.2;
 d_ST = 1.5;
 d_DH = 0.7;  
@@ -49,7 +48,6 @@ d_NO = 10.0;
 
 alpha_PC = 0.2;
 alpha_SC = 0.2;
-alpha_SL = 0.2;
 alpha_MC = 0.2;
 alpha_ST = 0.2;
 alpha_DH = 0.2;
