@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_005] at 429:1-430:54 models/modified_model.mod: Name "MC" already defined.
+### OPL exception: Impossible to load model.

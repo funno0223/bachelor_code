@@ -377,26 +377,15 @@ execute {
 dvar boolean o[Notes][Strings];
 dvar boolean y[Notes][HandPosition][Fingers][AllCombinations];
 dvar boolean x[Notes][HandPosition];
+dvar float wristAngle[Notes] in -90..0;
 
-// 現在のハンドポジションの絶対位置 (mm)
-dexpr float AbsHandPos[i in Notes] = 
-  (note[i] == RestNote) ? 0.0 :
-    sum(p in HandPosition) fretPosition[p] * x[i][p];
-
-// 現在の発音位置の絶対位置 (mm) ※開放弦は0フレット位置
-dexpr float AbsNotePos[i in Notes] = 
-  (note[i] == RestNote) ? 0.0 :
-    (
-      sum(p in HandPosition) sum(h in Fingers) sum(c in AllCombinations) fretPosition[c.fret] * y[i][p][h][c] +
-      sum(s in Strings : s in OpenStrings[note[i]]) fretPosition[0] * o[i][s]
-    );
-
-// ----------------------------------------------------------------------------
-
-// PC: Position Change (ハンドポジションの移動距離)
 dexpr float PC[i in NotesButFirst] = 
-  (note[i] == RestNote || prevNoteIndex[i] == i) ? 0.0 : 
-  abs(AbsHandPos[prevNoteIndex[i]] - AbsHandPos[i]);
+  (note[i] == RestNote || prevNoteIndex[i] == i) ?
+  0.0 : 
+  abs(
+    (sum(p in HandPosition) fretPosition[p] * x[i][p]) - 
+    (sum(p in HandPosition) fretPosition[p] * x[prevNoteIndex[i]][p])
+  );
 
 // SC: String Change (弦移動コスト)
 dexpr float SC[i in NotesButFirst] = 
@@ -422,13 +411,20 @@ dexpr float DH[i in Notes] =
   sum(p in HandPosition) sum(h in Fingers) sum(c in Combinations[note[i]])
     Physics_CostTable[p][h][c] * y[i][p][h][c];
 
-// MC: Movement Cost (指の相対移動)機能
-dexpr float MC[i in NotesButFirst] = 
-  (note[i] == RestNote || prevNoteIndex[i] == i) ? 0.0 :
-  abs(
-      (AbsNotePos[i] - AbsHandPos[i]) - 
-      (AbsNotePos[prevNoteIndex[i]] - AbsHandPos[prevNoteIndex[i]])
+dexpr float CurrentWristAngle[i in Notes] = 
+  (note[i] == RestNote) ? 0.0 :
+  (
+    sum(p in HandPosition) sum(h in Fingers) sum(c in AllCombinations) 
+      y[i][p][h][c] * BestWristAngleTable[p][h][c] 
+    // + 開放弦なら0度なので加算なし
   );
+
+// ★MCの再定義: 前後の手首角度の変化量 (絶対値)
+dexpr float MC[i in NotesButFirst] = 
+  (note[i] == RestNote || prevNoteIndex[i] == i) ?
+  0.0 :
+  abs(CurrentWristAngle[i] - CurrentWristAngle[prevNoteIndex[i]]);
+
 
 // --- 総コストの集計 (SLを削除) ---
 dexpr float tot_PC = sum(i in NotesButFirst) PC[i] * timePenaltyFactor[i];

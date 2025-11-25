@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_035] at 427:12-29 models/modified_model.mod: Circular dependency declaring "CurrentWristAngle".
+### OPL exception: Impossible to load model.
