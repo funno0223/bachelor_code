@@ -413,7 +413,7 @@ minimize
   alpha_ST * d_ST * tot_ST + 
   alpha_DH * d_DH * tot_DH +
   alpha_NO * d_NO * tot_NO +
-  alpha_AC * d_AC * tot_AC;  // SLの項を削除
+  alpha_AC * d_AC * tot_AC;
 
 // ============================================================================
 // 4. 制約条件 (Constraints)
@@ -584,7 +584,7 @@ subject to {
 // ============================================================================
 main {
   cplex.epgap = 0.01;
-  cplex.tilim = 600; // 必要に応じてタイムリミットを設定
+  cplex.tilim = 1000; // 必要に応じてタイムリミットを設定
   cplex.mipemphasis = 1;
 
   thisOplModel.generate();
