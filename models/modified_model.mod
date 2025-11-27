@@ -61,15 +61,12 @@ float d_SC = ...;
 float d_ST = ...;
 float d_DH = ...;
 float d_NO = ...;
-float d_AC = ...;
 
 float alpha_PC = ...;
 float alpha_SC = ...;
 float alpha_ST = ...;
 float alpha_DH = ...;
 float alpha_NO = ...;
-float alpha_AC = ...;
-
 // ============================================================================
 // 2. 前処理 (Execute Blocks)
 // ============================================================================
@@ -134,19 +131,68 @@ execute {
         // 論理的制約: 目標フレットがハンドポジションより低い場合は不可
         if (c.fret < p) continue; 
 
-        // -------------------------------------------------------
-        // 1. 物理的負荷 (Physics Cost) - 角度非依存
+// -------------------------------------------------------
+        // 1. 物理的負荷 (Physics Cost) - Grimes (2014) Eq.7 Model
         // -------------------------------------------------------
         var targetString = c.corda;
-        var a_mm = 0.5 + (2.0 * c.fret / 12.0); // 弦高
-        var l_mm = scaleLength - fretPosition[c.fret]; // 振動弦長
-        var tau = stringTension[targetString];
+        
+        // --- 物理定数配列の初期化 ---
+        // E_GPa: ヤング率 (1-3弦:Plain Steel ~180GPa, 4-6弦:Wound ~30-60GPa)
+        var E_GPa = new Array();
+        E_GPa[1] = 179.0; E_GPa[2] = 188.0; E_GPa[3] = 177.0;
+        E_GPa[4] = 62.0;  E_GPa[5] = 42.0;  E_GPa[6] = 33.0;
+
+        // Area_m2: 断面積 (Gauge .010 - .046)
+        var Area_m2 = new Array();
+        Area_m2[1] = 5.13e-8; Area_m2[2] = 8.56e-8; Area_m2[3] = 1.48e-7;
+        Area_m2[4] = 3.55e-7; Area_m2[5] = 6.79e-7; Area_m2[6] = 1.10e-6;
+
+        // Tension_N: 張力 (約 60N - 80N)
+        var Tension_N = new Array();
+        Tension_N[1] = 73.0; Tension_N[2] = 70.0; Tension_N[3] = 68.0;
+        Tension_N[4] = 75.0; Tension_N[5] = 78.0; Tension_N[6] = 76.0;
+
+        // 幾何パラメータ (mm)
+        var a_mm = 0.5 + (2.0 * c.fret / 12.0);        // 弦高 (Action)
+        var l_mm = scaleLength - fretPosition[c.fret]; // 振動弦長 (Vibrating Length)
+
         var forceIndex = 0.0;
+
         if (l_mm > 0.001) {
-             forceIndex = (2.0 * tau * a_mm) / (l_mm * tanTheta);
+            // SI単位系 (メートル) への変換
+            var l_m = l_mm / 1000.0;
+            var a_m = a_mm / 1000.0;
+            
+            var E = E_GPa[targetString] * 1.0e9; // GPa -> Pa (N/m^2)
+            var A = Area_m2[targetString];       // m^2
+            var T = Tension_N[targetString];     // N
+
+            // 角度 theta_f の構成要素計算
+            // 直角三角形: 底辺 l, 高さ a, 斜辺 hyp
+            var hyp_m = Math.sqrt(l_m * l_m + a_m * a_m);
+            var sin_theta = a_m / hyp_m;
+            var cos_theta = l_m / hyp_m;
+
+            // 歪み項: (1 - cos) / cos = (1 / cos) - 1
+            var strain_term = (1.0 / cos_theta) - 1.0;
+
+            // Grimes Eq.7: F = (T + EA * strain) * sin_theta
+            // 論文中の epsilon_f は Fretting Force (F_f) を指す
+            var F_newton = (T + (E * A * strain_term)) * sin_theta;
+            
+            forceIndex = F_newton;
         }
+
+        // 最終コスト計算
+        // 前回のモデル(最大値~10.0)と今回のモデル(最大値~0.6N)のスケールを合わせるため
+        // 単純な100倍ではなく、約15倍程度に調整しています。
+        // これにより、目的関数の重みパラメータを大きく変更せずに済みます。
+        var scalingFactor = 15.0; 
+        
         var diff = fingerDifficulty[h];
-        Physics_CostTable[p][h][c] = (forceIndex * 100.0) * diff;
+        Physics_CostTable[p][h][c] = (forceIndex * scalingFactor) * diff;
+
+
         // -------------------------------------------------------
         // 2. 幾何学的ストレッチ (Stretch Cost) - 角度探索
         // -------------------------------------------------------
@@ -277,10 +323,11 @@ execute {
             }
         } // end angle loop
 
+
+
         // 結果の格納
         if (foundValidAngle == 1) {
             Stretch_CostTable[p][h][c] = minStCost;
-            BestWristAngleTable[p][h][c] = bestAngle; // AC計算用に角度を保存
         }
 
       } // end combinations
@@ -384,36 +431,19 @@ dexpr float DH[i in Notes] =
   sum(p in HandPosition) sum(h in Fingers) sum(c in Combinations[note[i]])
     Physics_CostTable[p][h][c] * y[i][p][h][c];
 
-dexpr float CurrentWristAngle[i in Notes] = 
-  (note[i] == RestNote) ? 0.0 :
-  (
-    sum(p in HandPosition) sum(h in Fingers) sum(c in AllCombinations) 
-      y[i][p][h][c] * BestWristAngleTable[p][h][c] 
-    // + 開放弦なら0度なので加算なし
-  );
 
-// AC: 前後の手首角度の変化量 (絶対値)
-dexpr float AC[i in NotesButFirst] = 
-  (note[i] == RestNote || prevNoteIndex[i] == i) ?
-  0.0 :
-  abs(CurrentWristAngle[i] - CurrentWristAngle[prevNoteIndex[i]]);
-
-
-// --- 総コストの集計 (SLを削除) ---
+// --- 総コストの集計  ---
 dexpr float tot_PC = sum(i in NotesButFirst) PC[i] * timePenaltyFactor[i];
 dexpr float tot_SC = sum(i in NotesButFirst) SC[i] * timePenaltyFactor[i];
 dexpr float tot_ST = sum(i in Notes) ST[i];
 dexpr float tot_DH = sum(i in Notes) DH[i];
 dexpr float tot_NO = sum(i in Notes) sum(s in Strings : s in OpenStrings[note[i]]) o[i][s];
-dexpr float tot_AC = sum(i in NotesButFirst) AC[i] * timePenaltyFactor[i];
-
 minimize
   alpha_PC * d_PC * tot_PC +
   alpha_SC * d_SC * tot_SC +
   alpha_ST * d_ST * tot_ST + 
   alpha_DH * d_DH * tot_DH +
-  alpha_NO * d_NO * tot_NO +
-  alpha_AC * d_AC * tot_AC;
+  alpha_NO * d_NO * tot_NO;
 
 // ============================================================================
 // 4. 制約条件 (Constraints)
@@ -583,9 +613,8 @@ subject to {
 // 5. 出力設定
 // ============================================================================
 main {
-  cplex.epgap = 0.01;
-  cplex.tilim = 1000; // 必要に応じてタイムリミットを設定
-  cplex.mipemphasis = 1;
+  //cplex.epgap = 0.03;
+  cplex.tilim = 10000; // 必要に応じてタイムリミットを設定
 
   thisOplModel.generate();
   if (cplex.solve()) {
@@ -636,15 +665,13 @@ writeln("\n--- Cost Breakdown ---");
   var costST = alpha_ST * d_ST * tot_ST;
   var costDH = alpha_DH * d_DH * tot_DH;
   var costNO = alpha_NO * d_NO * tot_NO;
-  var costAC = alpha_AC * d_AC * tot_AC;
 
   writeln("  Position Change (PC): ", costPC);
-  writeln("  Finger Move     (AC): ", costAC);
   writeln("  String Change   (SC): ", costSC);
   writeln("  Geo Stretch     (ST): ", costST);
   writeln("  Phys Action     (DH): ", costDH);
   writeln("  Open String     (NO): ", costNO);
   writeln("-----------------------------------------");
-  writeln("  Total Cost (Sum)    : ", costPC + costSC + costST + costDH + costNO + costAC);
+  writeln("  Total Cost (Sum)    : ", costPC + costSC + costST + costDH + costNO);
   writeln("-----------------------------------------");
 }
