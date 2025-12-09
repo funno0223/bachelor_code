@@ -3,7 +3,7 @@
 scaleLength = 628.0;
 stringSpacing = 10.8;
 natural_min_spread_mm = [20, 40, 55];
-timePerMm = 0.25;
+timePerMm = 0.5;
 neck_thickness = 3; //1: thin, 2: regular, 3:thick
 
 fingerLengths_mm = [70.0, 75.0, 70.0, 50.0];

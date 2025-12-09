@@ -53,6 +53,7 @@ float timePerMm = ...;
 float fingerLengths_mm[Fingers] = ...;
 float fingerDifficulty[Fingers] = ...;
 float natural_min_spread_mm[FingersButFirst] = ...;
+float stringAction12thMm = ...;
 
 // 計算テーブル
 float Stretch_CostTable[p in HandPosition][h in Fingers][c in AllCombinations];
@@ -182,7 +183,7 @@ execute {
         Tension_N[4] = 75.0; Tension_N[5] = 78.0; Tension_N[6] = 76.0;
 
         // 幾何パラメータ (mm)
-        var a_mm = 0.5 + (2.0 * c.fret / 12.0);
+        var a_mm = 0.5 + ((stringAction12thMm - 0.5) * c.fret / 12.0);
         var l_mm = scaleLength - fretPosition[c.fret];
 
         var forceIndex = 0.0;
@@ -201,7 +202,7 @@ execute {
             forceIndex = F_newton;
         }
 
-        var scalingFactor = 15.0; 
+        var scalingFactor = 7.5; 
         var diff = fingerDifficulty[h];
         Physics_CostTable[p][h][c] = (forceIndex * scalingFactor) * diff;
 
@@ -500,9 +501,6 @@ subject to {
     }
   }
 
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-  // ① 共通の物理的制約 ３音以上のスライドを禁止
-  // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i) {
     forall(p in HandPosition) {
@@ -526,24 +524,30 @@ forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i) {
     }
   }
 
-forall(i in Notes : i >= 3 && note[i] != RestNote && prevNoteIndex[i] == i-1 && prevNoteIndex[i-1] == i-2) {
-     forall(h in Fingers) {
-        forall(s in Strings) {
-           // if文を使わず、forallのフィルタ(:)で条件に合う組み合わせだけを回す
-           forall(c in Combinations[note[i]] : c.corda == s)
-             forall(c1 in Combinations[note[i-1]] : c1.corda == s && c.fret != c1.fret)
-               forall(c2 in Combinations[note[i-2]] : c2.corda == s && c1.fret != c2.fret) {
-                  
-                  // 制約式: 3つの音が同時に選択されることを禁止 (和 <= 2)
-                  sum(p in HandPosition) y[i][p][h][c] + 
-                  sum(p in HandPosition) y[i-1][p][h][c1] + 
-                  sum(p in HandPosition) y[i-2][p][h][c2] <= 2;
-               }
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  // ポジション移動を伴わないスライドの禁止
+  // (同一ポジション p かつ 同一指 h で、同じ弦・異なるフレットへの移動を禁止)
+  // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+  forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i) {
+    forall(p in HandPosition) {
+      forall(h in Fingers) {
+        forall(c in Combinations[note[i]]) {
+           // 現在のノートが ポジションp / 指h / 組み合わせc で弾かれる場合...
+           y[i][p][h][c] + 
+           // 直前のノートが 「同じポジション p」「同じ指 h」「同じ弦」「異なるフレット(移動あり)」
+           // であった場合、その組み合わせの和は1以下でなければならない（＝両立しない）
+           sum(c_prev in Combinations[note[prevNoteIndex[i]]] : 
+               (c.corda == c_prev.corda && c.fret != c_prev.fret)
+           ) y[prevNoteIndex[i]][p][h][c_prev] 
+           <= 1;
         }
-     }
+      }
+    }
   }
 
- // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   // ② 速弾き (isFast = 1) 時の制約 (relaxThreshold < 200ms)
   // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -573,22 +577,8 @@ forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFa
     }
   }
 
-  // 2-2. [距離制限] 大跳躍の禁止
-  forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFast[i] == 1) {
-      forall(p in HandPosition) {
-        forall(h in Fingers) {
-          forall(c in Combinations[note[i]]) {
-             y[i][p][h][c] + 
-             sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
-                 (abs(c.fret - c_prev.fret) > 12 || abs(p - p_prev) > 12)
-             ) y[prevNoteIndex[i]][p_prev][h_prev][c_prev] 
-             <= 1;
-          }
-        }
-      }
-  }
 
-  // 2-3. [技術制限] 同音連打時の指変更禁止 (トリル対策)
+  // 2-2. [技術制限] 同音連打時の指変更禁止 (トリル対策)
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFast[i] == 1) {
       forall(p in HandPosition) {
         forall(h in Fingers) {
@@ -608,22 +598,8 @@ forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFa
   // ※ isLegato=1 の時は自動的に isFast=1 の制約も適用されます
   // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-  // 3-1. [距離制限] レガート時の移動距離制限
-  forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isLegato[i] == 1) {
-      forall(p in HandPosition) {
-        forall(h in Fingers) {
-          forall(c in Combinations[note[i]]) {
-             y[i][p][h][c] + 
-             sum(p_prev in HandPosition, h_prev in Fingers, c_prev in Combinations[note[prevNoteIndex[i]]] : 
-                 (abs(c.fret - c_prev.fret) > 8 || abs(p - p_prev) > 8)
-             ) y[prevNoteIndex[i]][p_prev][h_prev][c_prev] 
-             <= 1;
-          }
-        }
-      }
-  }
 
-  // 3-2. [技術制限] スライドの禁止
+  // 3-1. [技術制限] スライドの禁止
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isLegato[i] == 1) {
       forall(p in HandPosition) {
         forall(h in Fingers) {
@@ -638,7 +614,7 @@ forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isFa
       }
   }
 
-  // 3-3. [安定性制限] アンカーの維持
+  // 3-2. [安定性制限] アンカーの維持
   forall(i in NotesButFirst : note[i] != RestNote && prevNoteIndex[i] != i && isLegato[i] == 1) {
     forall(p in HandPosition) {
       forall(h in Fingers) {
