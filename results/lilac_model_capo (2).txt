@@ -1,0 +1,21 @@
+
+<<< setup
+
+INFO: Generating Combinations for Capo = 2
+*** ERROR[SCRIPT_002] at 95:0 models/model_capo.mod: Scripting runtime error: Element "IloOplIntSet" does not exist in OPL model..
+*** ERROR[SCRIPT_004] at 90:1-8 models/model_capo.mod: Execution of "anonymous#1" failed: "models/model_capo.mod", line 95: Element "IloOplIntSet" does not exist in OPL model..
+INFO: Neck Thickness Mode = 3 -> Max Reduction = 0.3
+INFO: Neck Factor Curve Exponent k = 8.00392278
+INFO: Calculating v17 Stretch Costs...
+INFO: Final Stretch Costs & Angles Calculated.
+INFO: Time Logic Initialized.
+  - Relax Threshold: 250 ms
+INFO: Time Penalty Factors Pre-calculated.
+*** ERROR[INTERFACE_003] at 703:0 models/model_capo.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

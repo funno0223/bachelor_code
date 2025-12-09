@@ -1,0 +1,227 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Presolve has eliminated 425665 rows and 1697031 columns...
+Tried aggregator 2 times.
+MIP Presolve eliminated 1772711 rows and 2972425 columns.
+MIP Presolve modified 18706 coefficients.
+Aggregator did 409 substitutions.
+Reduced MIP has 5701 rows, 7578 columns, and 44419 nonzeros.
+Reduced MIP has 6608 binaries, 0 generals, 0 SOSs, and 516 indicators.
+Presolve time = 18.17 sec. (20478.02 ticks)
+Probing fixed 871 vars, tightened 728 bounds.
+Probing changed sense of 1786 constraints.
+Probing time = 0.03 sec. (19.21 ticks)
+Tried aggregator 2 times.
+MIP Presolve eliminated 753 rows and 1592 columns.
+MIP Presolve modified 5204 coefficients.
+Aggregator did 25 substitutions.
+Reduced MIP has 4923 rows, 5961 columns, and 38477 nonzeros.
+Reduced MIP has 5011 binaries, 2 generals, 0 SOSs, and 516 indicators.
+Presolve time = 0.05 sec. (58.34 ticks)
+Probing fixed 0 vars, tightened 382 bounds.
+Probing time = 0.02 sec. (11.46 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve modified 334 coefficients.
+Reduced MIP has 4923 rows, 5961 columns, and 38477 nonzeros.
+Reduced MIP has 5011 binaries, 2 generals, 0 SOSs, and 516 indicators.
+Presolve time = 0.02 sec. (25.69 ticks)
+Probing time = 0.01 sec. (3.71 ticks)
+Clique table members: 17540.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0.08 sec. (55.22 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      131.2889   236                    131.2889     2145         
+*     0+    0                         1752.0000      131.2889            92.51%
+*     0+    0                         1730.0000      131.2889            92.41%
+      0     0      134.7254   315     1730.0000     Cuts: 261     2925   92.21%
+*     0+    0                          381.0000      134.7254            64.64%
+      0     0      135.0442   255      381.0000     Cuts: 260     3376   64.56%
+*     0+    0                          350.0000      135.0442            61.42%
+      0     0      135.3698   292      350.0000     Cuts: 151     3675   61.32%
+      0     0      136.5129   234      350.0000     Cuts: 142     3949   60.63%
+*     0+    0                          266.0000      137.7939            48.20%
+      0     0  -1.00000e+75     0      266.0000      137.7939     3949   48.20%
+*     0+    0                          228.0000      137.7939            39.56%
+      0     0      138.8847   234      228.0000     Cuts: 126     4169   39.09%
+Detecting symmetries...
+      0     0      141.3324   221      228.0000     Cuts: 130     4393   38.01%
+*     0+    0                          206.0000      141.3324            31.39%
+      0     0      141.7861   130      206.0000      Cuts: 89     4533   31.17%
+*     0+    0                          174.0000      141.7861            18.51%
+      0     0      142.0000    24      174.0000      Cuts: 41     4578   18.39%
+*     0+    0                          150.0000      142.0000             5.33%
+      0     0  -1.00000e+75     0      150.0000      142.0000     4578    5.33%
+      0     0      142.0000    43      150.0000       Cuts: 9     4616    5.33%
+      0     0      142.0000    40      150.0000      Cuts: 13     4661    5.33%
+*     0+    0                          142.0000      142.0000             0.00%
+      0     0  -1.00000e+75     0      142.0000      142.0000     4661    0.00%
+      0     0        cutoff            142.0000      142.0000     4661    0.00%
+Elapsed time = 22.88 sec. (25191.60 ticks, tree = 0.01 MB, solutions = 10)
+
+GUB cover cuts applied:  19
+Clique cuts applied:  7
+Cover cuts applied:  2
+Implied bound cuts applied:  5
+Flow cuts applied:  102
+Mixed integer rounding cuts applied:  158
+Zero-half cuts applied:  1
+Lift and project cuts applied:  29
+Gomory fractional cuts applied:  31
+
+Root node processing (before b&c):
+  Real time             =   23.00 sec. (25339.71 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   23.00 sec. (25339.71 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 142
+Note	String	Fret	Handposition	Finger
+E5	1	12	9	4	
+E5	1	12	9	4	
+Fs5	1	14	9	4	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+B4	1	7	7	1	
+Cs5	1	9	7	3	
+B4	1	7	7	1	
+E4	3	9	7	3	
+E3	5	7	7	1	
+Fs3	5	9	7	3	
+E3	5	7	7	1	
+Cs3	6	9	7	3	
+B2	6	7	7	1	
+Cs3	6	9	7	3	
+E5	1	12	9	4	
+E5	1	12	9	4	
+Fs5	1	14	9	4	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+B4	2	12	9	4	
+Cs5	1	9	9	1	
+B4	2	12	9	4	
+Gs4	2	9	9	1	
+G4	3	12	9	4	
+Fs4	3	11	9	3	
+E4	3	9	9	1	
+E4	3	9	9	1	
+E4	3	9	9	1	
+E5	1	12	9	4	
+E5	1	12	9	4	
+Fs5	1	14	9	4	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+B4	1	7	7	1	
+Cs5	1	9	7	3	
+B4	1	7	7	1	
+E4	3	9	7	3	
+E3	5	7	7	1	
+Fs3	5	9	7	3	
+E3	5	7	7	1	
+Cs3	6	9	7	3	
+B2	6	7	7	1	
+Cs3	6	9	7	3	
+Cs3	6	9	7	3	
+B2	6	7	7	1	
+C3	6	8	7	2	
+Cs3	6	9	7	3	
+E3	5	7	7	1	
+Fs3	5	9	7	3	
+E3	5	7	7	1	
+Gs3	5	11	8	4	
+B3	4	9	8	2	
+B3	4	9	8	2	
+Cs4	4	11	8	4	
+C5	1	8	8	1	
+E5	1	12	9	4	
+E5	1	12	9	4	
+Fs5	1	14	9	4	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+E5	1	12	9	4	
+Cs5	1	9	7	3	
+B4	1	7	7	1	
+Cs5	1	9	7	3	
+B4	1	7	7	1	
+E4	3	9	7	3	
+E3	5	7	7	1	
+Fs3	5	9	7	3	
+E3	5	7	7	1	
+Cs3	6	9	7	3	
+B2	6	7	7	1	
+Cs3	6	9	7	3	
+E5	1	12	9	4	
+E5	1	12	9	4	
+Fs5	1	14	9	4	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+B4	2	12	9	4	
+Cs5	1	9	9	1	
+B4	2	12	9	4	
+Gs4	2	9	9	1	
+G4	3	12	9	4	
+Fs4	3	11	9	3	
+E4	3	9	9	1	
+E4	3	9	9	1	
+E4	3	9	9	1	
+E5	1	12	9	4	
+E5	1	12	9	4	
+Fs5	1	14	9	4	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+E5	1	12	9	4	
+Cs5	1	9	9	1	
+B4	1	7	7	1	
+Cs5	1	9	6	4	
+B4	1	7	6	2	
+E4	3	9	6	4	
+E3	5	7	6	2	
+Fs3	5	9	6	4	
+E3	5	7	6	2	
+Cs3	6	9	6	4	
+B2	6	7	6	2	
+Cs3	6	9	6	4	
+Gs4	2	9	6	4	
+Cs4	3	6	6	1	
+E4	3	9	6	4	
+Cs4	3	6	6	1	
+Fs4	2	7	6	2	
+Cs4	3	6	6	1	
+Gs4	2	9	6	4	
+Cs4	3	6	6	1	
+Fs4	2	7	6	2	
+Cs4	3	6	6	1	
+E4	3	9	6	4	
+
+1,1,1,1,1,1,1,1,1,1,3,5,5,5,6,6,6,1,1,1,1,1,1,1,2,1,2,2,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,5,5,5,6,6,6,6,6,6,6,5,5,5,5,4,4,4,1,1,1,1,1,1,1,1,1,1,1,3,5,5,5,6,6,6,1,1,1,1,1,1,1,2,1,2,2,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,3,5,5,5,6,6,6,2,3,3,3,2,3,2,3,2,3,3,
+12,12,14,12,9,12,9,7,9,7,9,7,9,7,9,7,9,12,12,14,12,9,12,9,12,9,12,9,12,11,9,9,9,12,12,14,12,9,12,9,7,9,7,9,7,9,7,9,7,9,9,7,8,9,7,9,7,11,9,9,11,8,12,12,14,12,9,12,9,7,9,7,9,7,9,7,9,7,9,12,12,14,12,9,12,9,12,9,12,9,12,11,9,9,9,12,12,14,12,9,12,9,7,9,7,9,7,9,7,9,7,9,9,6,9,6,7,6,9,6,7,6,9,
+4,4,4,4,1,4,1,1,3,1,3,1,3,1,3,1,3,4,4,4,4,1,4,1,4,1,4,1,4,3,1,1,1,4,4,4,4,1,4,1,1,3,1,3,1,3,1,3,1,3,3,1,2,3,1,3,1,4,2,2,4,1,4,4,4,4,1,4,3,1,3,1,3,1,3,1,3,1,3,4,4,4,4,1,4,1,4,1,4,1,4,3,1,1,1,4,4,4,4,1,4,1,1,4,2,4,2,4,2,4,2,4,4,1,4,1,2,1,4,1,2,1,4,
+<<< post process
+
+
+<<< done
+

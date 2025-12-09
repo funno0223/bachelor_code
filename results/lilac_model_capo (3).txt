@@ -1,0 +1,6 @@
+
+<<< setup
+
+*** ERROR[GENERATE_005] at 90:1-91:52 models/model_capo.mod: Name "OpenStrings" already defined.
+*** ERROR[GENERATE_005] at 93:1-96:7 models/model_capo.mod: Name "Combinations" already defined.
+### OPL exception: Impossible to load model.
