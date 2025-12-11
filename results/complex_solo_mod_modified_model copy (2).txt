@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_200] at 17:13-14 datas/complex_solo_mod.dat: Element "Combinations" not defined.
+### OPL exception: Processing failed.

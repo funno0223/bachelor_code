@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR at 177:15 models/modified_model copy.mod: Scripting parser error: missing ')'.
+### OPL exception: Impossible to load model.

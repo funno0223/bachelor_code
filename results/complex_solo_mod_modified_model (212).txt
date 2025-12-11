@@ -1,0 +1,14 @@
+
+<<< setup
+
+*** ERROR[GENERATE_217] at 54:1-32 models/modified_model.mod: External data element "stringAction12thMm" was not defined.
+INFO: Calculating ST Costs & Feasible Ranges (Threshold Margin: 3)...
+*** ERROR[GENERATE_202] at 174:0 models/modified_model.mod: Data element "stringAction12thMm" not defined.
+*** ERROR[INTERFACE_003] at 566:0 models/modified_model.mod: Impossible to load model.
+main returns -2
+
+<<< main
+
+
+<<< done
+

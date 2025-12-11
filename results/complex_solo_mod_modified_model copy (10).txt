@@ -1,0 +1,15 @@
+
+<<< setup
+
+INFO: Calculating ST Costs & Feasible Ranges (Threshold Margin: 3)...
+INFO: Generating Sparse Sets for optimization...
+*** ERROR[GENERATE_103] at 407:28-40 models/modified_model copy.mod: OPL cannot extract expression: ValidPHCs[i].
+*** ERROR[GENERATE_104] at 407:1-42 models/modified_model copy.mod: OPL cannot extract model: 
+Out of Scope Index i out of scope in TupleSets[i].
+*** ERROR[GENERATE_209] at 407:1-42 models/modified_model copy.mod: Invalid initialization expression for element "y".
+*** ERROR[GENERATE_210] at 425:49-50 models/modified_model copy.mod: Element "y" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 423:3-425:59 models/modified_model copy.mod: Invalid initialization expression for element "ST".
+*** ERROR[GENERATE_210] at 435:38-40 models/modified_model copy.mod: Element "ST" is not available, see previous error(s).
+*** ERROR[GENERATE_209] at 435:22-43 models/modified_model copy.mod: Invalid initialization expression for element "tot_ST".
+*** ERROR[GENERATE_210] at 442:21-27 models/modified_model copy.mod: Element "tot_ST" is not available, see previous error(s).
+### OPL exception: No main in model.

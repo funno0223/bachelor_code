@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[PARSE_001] at 463:11-22 models/modified_model.mod: syntax error, unexpected (identifier), expecting '}'
+### OPL exception: Impossible to load model.

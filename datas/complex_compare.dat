@@ -37,7 +37,7 @@ fingerLengths_mm = [70, 77, 73, 57];
 fingerDifficulty = [1.0, 1.2, 1.15, 1.3]; 
 
 d_PC = 0.9;
-d_SC = 0.7;
+d_SC = 1.5;
 d_ST = 1.75;
 d_DH = 0.5;  
 d_NO = 10.0;

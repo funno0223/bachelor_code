@@ -1,0 +1,15 @@
+
+<<< setup
+
+INFO: Generating Candidate Lists (Arrays)...
+INFO: Candidates Generated (Arrays).
+*** ERROR[GENERATE_103] at 401:3-437:4 models/modified_model copy.mod: CPLEX cannot extract expression: forall(i in 2..111: note[i] != 0 && prevNoteIndex[i] != i) if ( isLegato[i] == 1 ) (forall(k in 1..Cand_Count[i], kp in 1..Cand_Count[prevNoteIndex[i]]) if ( (Cand_H[i][k] == Cand_H[prevNoteIndex[i]][kp] && Cand_S[i][k] == Cand_S[prevNoteIndex[i]][kp] && Cand_F[i][k] != Cand_F[prevNoteIndex[i]][kp] && Cand_IsOpen[i][k] == 0 && Cand_IsOpen[prevNoteIndex[i]][kp] == 0) ) x[i][k]+x[prevNoteIndex[i]][kp] <= 1; else true && if ( (abs(Cand_F[i][k]+Cand_F[prevNoteIndex[i]][kp]*(-1)) > 8 || abs(Cand_P[i][k]+Cand_P[prevNoteIndex[i]][kp]*(-1)) > 8) ) x[i][k]+x[prevNoteIndex[i]][kp] <= 1; else true); else true && if ( isFast[i] == 1 ) (forall(k in 1..Cand_Count[i], kp in 1..Cand_Count[prevNoteIndex[i]]) if ( Cand_P[i][k] == Cand_P[prevNoteIndex[i]][kp] && Cand_IsOpen[i][k] == 0 && Cand_IsOpen[prevNoteIndex[i]][kp] == 0 ) if ( Cand_F[i][k] > Cand_F[prevNoteIndex[i]][kp] && Cand_H[i][k] < Cand_H[prevNoteIndex[i]][kp] || Cand_F[i][k] < Cand_F[prevNoteIndex[i]][kp] && Cand_H[i][k] > Cand_H[prevNoteIndex[i]][kp] ) x[i][k]+x[prevNoteIndex[i]][kp] <= 1; else true; else true); else true.
+*** ERROR[SCRIPT_002] at 447:0 models/modified_model copy.mod: Scripting runtime error: (in generate) Processing OPL model "modified_model copy" failed..
+*** ERROR[SCRIPT_004] at 444:1-5 models/modified_model copy.mod: Execution of "main" failed: "models/modified_model copy.mod", line 447: generate: Processing OPL model "modified_model copy" failed..
+main returns -1
+
+<<< main
+
+
+<<< done
+

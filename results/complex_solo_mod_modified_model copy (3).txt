@@ -1,0 +1,5 @@
+
+<<< setup
+
+*** ERROR[GENERATE_005] at 45:1-38 models/modified_model copy.mod: Name "OpenStrings" already defined.
+### OPL exception: Impossible to load model.
