@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 281:44-55 models/modified_model.mod: Name "is_FullCost" does not exist.
-### OPL exception: Impossible to load model.

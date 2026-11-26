@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 49:9-10 datas/complex_solo.dat: Element "alpha_DH" not defined.
-### OPL exception: Processing failed.

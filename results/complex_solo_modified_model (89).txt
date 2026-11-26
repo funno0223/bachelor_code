@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 146:10-54 models/modified_model.mod: Name "connectedTimeThreshold" does not exist.
-### OPL exception: Impossible to load model.

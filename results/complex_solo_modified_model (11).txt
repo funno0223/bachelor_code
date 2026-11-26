@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 284:7-11 models/modified_model.mod: syntax error, unexpected dvar
-### OPL exception: Impossible to load model.

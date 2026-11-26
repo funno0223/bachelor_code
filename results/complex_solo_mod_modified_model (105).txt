@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 408:46-48 models/modified_model.mod: Name "AC" does not exist.
-### OPL exception: Impossible to load model.

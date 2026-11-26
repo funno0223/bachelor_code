@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_005] at 286:5-287:70 models/modified_model.mod: Name "assign_cost_PC_full_up" already defined.
-### OPL exception: Impossible to load model.

@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_208] at 40:19-20 datas/青春コンプレックス.dat: Data element "timeThresholdRatio" has already been set.
-### OPL exception: Processing failed.

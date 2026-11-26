@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR at 360:36 models/modified_model.mod: Scripting parser error: missing expression.
-### OPL exception: Impossible to load model.

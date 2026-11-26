@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 321:1-2 models/modified_model.mod: syntax error, unexpected '}'
-### OPL exception: Impossible to load model.

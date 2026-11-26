@@ -1,9 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 105:28-29 models/model.mod: syntax error, unexpected '(', expecting ';'
-*** ERROR[PARSE_001] at 107:3-6 models/model.mod: syntax error, unexpected (float-literal)
-*** ERROR[PARSE_001] at 108:3-6 models/model.mod: syntax error, unexpected (float-literal)
-*** ERROR[PARSE_001] at 109:1-2 models/model.mod: syntax error, unexpected '}'
-*** ERROR[PARSE_001] at 345:1-2 models/model.mod: syntax error, unexpected '}'
-### OPL exception: Impossible to load model.

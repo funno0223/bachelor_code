@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 337:5-22 models/modified_model.mod: Name "Physics_CostTable" does not exist.
-### OPL exception: Impossible to load model.

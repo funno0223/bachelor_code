@@ -1,4 +1,0 @@
-
-<<< setup
-
-### OPL exception: File "models/modified_model.mod" not found.

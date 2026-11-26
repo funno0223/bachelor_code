@@ -1,6 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_005] at 147:1-95 models/modified_model.mod: Name "tot_PC" already defined.
-*** ERROR[GENERATE_006] at 263:9-22 models/modified_model.mod: Name "slide_savings" does not exist.
-### OPL exception: Impossible to load model.

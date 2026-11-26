@@ -1,9 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_217] at 15:1-26 models/model-fretspacing.mod: External data element "avgFretWidth" was not defined.
-*** ERROR[GENERATE_202] at 69:0 models/model-fretspacing.mod: Data element "avgFretWidth" not defined.
-*** ERROR[GENERATE_202]: Data element "avgFretWidth" not defined.
-
-<<< generate
-

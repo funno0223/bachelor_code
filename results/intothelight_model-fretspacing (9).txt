@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_042] at 136:1-8 models/model-fretspacing.mod: Cannot insert an execute block between a maximize or minimize statement and constraint definitions. If there are no constraints for an objective definition, use an empty one like "subject to { }" instead.
-### OPL exception: Impossible to load model.

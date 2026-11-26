@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 261:3-265:27 models/modified_model.mod: Name "tot_PC" does not exist.
-### OPL exception: Impossible to load model.

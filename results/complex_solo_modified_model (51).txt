@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_208] at 37:19-20 datas/complex_solo.dat: Data element "timeThresholdRatio" has already been set.
-### OPL exception: Processing failed.

@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 515:1-5 models/modified_model.mod: syntax error, unexpected main
-### OPL exception: Impossible to load model.

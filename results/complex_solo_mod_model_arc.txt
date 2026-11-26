@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 38:19-20 datas/complex_solo_mod.dat: Element "stringAction12thMm" not defined.
-### OPL exception: Processing failed.

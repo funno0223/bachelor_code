@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[DATA_004] at 21:359-363 datas/complex_solo.dat: Invalid array size, expecting 111.
-### OPL exception: Processing failed.

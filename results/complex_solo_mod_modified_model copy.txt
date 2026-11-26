@@ -1,8 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 419:21-27 models/modified_model copy.mod: syntax error, unexpected (identifier), expecting '}'
-*** ERROR[PARSE_001] at 419:48-54 models/modified_model copy.mod: syntax error, unexpected (identifier)
-*** ERROR[PARSE_001] at 420:21-27 models/modified_model copy.mod: syntax error, unexpected (identifier)
-*** ERROR[PARSE_001] at 420:64-70 models/modified_model copy.mod: syntax error, unexpected (identifier)
-### OPL exception: Impossible to load model.

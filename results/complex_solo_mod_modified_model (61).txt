@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** FATAL[PARSE_107] at 432:44-433:1 models/modified_model.mod: Unexpected end of file found in scripting.
-### OPL exception: Processing failed.

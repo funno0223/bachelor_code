@@ -1,6 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 104:28-29 models/model.mod: syntax error, unexpected *
-*** ERROR[PARSE_001] at 165:7-8 models/model.mod: syntax error, unexpected *
-### OPL exception: Impossible to load model.

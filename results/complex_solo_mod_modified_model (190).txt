@@ -1,6 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 412:67-81 models/modified_model.mod: Name "angleDeviation" does not exist.
-*** ERROR[GENERATE_042] at 436:1-8 models/modified_model.mod: Cannot insert an execute block between a maximize or minimize statement and constraint definitions. If there are no constraints for an objective definition, use an empty one like "subject to { }" instead.
-### OPL exception: Impossible to load model.

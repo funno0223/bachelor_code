@@ -1,4 +1,0 @@
-
-<<< setup
-
-### OPL exception: File "models/model-capo.mod" not found.

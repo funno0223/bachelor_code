@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 34:10-11 datas/complex_solo.dat: Element "timePerMm" not defined.
-### OPL exception: Processing failed.

@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 467:12-26 models/modified_model.mod: Name "BestAngleTable" does not exist.
-### OPL exception: Impossible to load model.

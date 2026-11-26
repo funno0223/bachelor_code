@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** FATAL[PARSE_105] at 1:1 datas/: Fatal error during scanning: out of dynamic memory in yy_get_next_buffer().
-### OPL exception: Processing failed.

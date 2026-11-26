@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_024] at 142:7-146:26 models/model.mod: The function DH_Stretch_Cost(float) does not exist.
-### OPL exception: Impossible to load model.

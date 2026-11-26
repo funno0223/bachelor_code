@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 14:6-7 datas/seiza.dat: Element "p_max" not defined.
-### OPL exception: Processing failed.

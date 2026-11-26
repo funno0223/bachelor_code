@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 123:1-9 models/model.mod: syntax error, unexpected (identifier), expecting ';'
-### OPL exception: Impossible to load model.

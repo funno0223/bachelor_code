@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 41:10-11 datas/intothelight.dat: Element "timePerMM" not defined.
-### OPL exception: Processing failed.

@@ -1,0 +1,7 @@
+# demo.midを既定モデルで最適化した運指表。
+Note    String  Fret  Handposition  Finger  EffAngle
+E2      6       0     1             0       0
+F2      6       1     1             1       -5
+R       0       0     0             x       0
+G2      6       3     2             2       -10
+A2      5       0     2             0       0

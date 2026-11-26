@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_006] at 112:4-23 models/model.mod: Name "fingerLength_mm" does not exist.
-### OPL exception: Impossible to load model.

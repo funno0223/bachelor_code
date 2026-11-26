@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 28:23-24 datas/complex_solo.dat: Element "connectedTimeThreshold" not defined.
-### OPL exception: Processing failed.

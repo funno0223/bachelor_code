@@ -1,8 +1,0 @@
-
-<<< setup
-
-*** ERROR[SCRIPT_002] at 86:0 models/modified_model.mod: Scripting runtime error: Element "assert" does not exist in OPL model..
-*** ERROR[SCRIPT_004] at 79:1-8 models/modified_model.mod: Execution of "anonymous#3" failed: "models/modified_model.mod", line 86: Element "assert" does not exist in OPL model..
-
-<<< generate
-

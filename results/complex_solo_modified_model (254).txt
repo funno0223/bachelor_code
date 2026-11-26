@@ -1,7 +1,0 @@
-
-<<< setup
-
-*** ERROR[PARSE_001] at 72:9-10 models/modified_model.mod: syntax error, unexpected =, expecting (identifier) or '['
-*** ERROR[PARSE_001] at 73:9-10 models/modified_model.mod: syntax error, unexpected =, expecting (identifier) or '['
-*** ERROR[PARSE_001] at 74:9-10 models/modified_model.mod: syntax error, unexpected =, expecting (identifier) or '['
-### OPL exception: Impossible to load model.

@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_200] at 15:15-16 datas/complex_solo_mod.dat: Element "PlayableSounds" not defined.
-### OPL exception: Processing failed.

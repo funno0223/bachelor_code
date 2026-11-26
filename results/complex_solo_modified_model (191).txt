@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR at 447:39 models/modified_model.mod: Scripting parser error: missing ')'.
-### OPL exception: Impossible to load model.

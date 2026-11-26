@@ -1,8 +1,0 @@
-
-<<< setup
-
-*** ERROR[SCRIPT_002] at 73:0 models/modified_model.mod: Scripting runtime error: unknown property 'mip'.
-*** ERROR[SCRIPT_004] at 72:1-8 models/modified_model.mod: Execution of "anonymous#1" failed: "models/modified_model.mod", line 73: unknown property 'mip'.
-
-<<< generate
-

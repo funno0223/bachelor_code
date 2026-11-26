@@ -1,5 +1,0 @@
-
-<<< setup
-
-*** ERROR[GENERATE_049] at 279:1-5 models/modified_model.mod: There can be at most one 'main' execute block.
-### OPL exception: Impossible to load model.
